@@ -1,7 +1,7 @@
 $(document).ready(init_devo);
 
 // Edit this URL to point to your back end
-var BACK_END_URL="../cgi-bin/bounce.py";
+var BACK_END_URL="http://strassmann.org/scifair/bounce.py";
 
 function init_devo(){
   TableFactory.install();
