@@ -1,5 +1,7 @@
 # Devo Science Fair registration form
 
+The current site is at (https://rawgit.com/straz/devo-scifair/release/)[https://rawgit.com/straz/devo-scifair/release/].
+
 This is a web form that you can host pretty much anywhere, usually for free.
 
 Filling out the form posts results to a Google Sheets spreadsheet, which is free.
@@ -33,13 +35,15 @@ See:
 You can test the back end script on your local machine.
 First, the back end script must be enabled for execution:
 ```bash
-  $ chmod +x bounce.py```
+  $ chmod +x bounce.py
+  ```
 
 The folder containing this script must be named cgi-bin (e.g. `./cgi-bin/bounce.py`)
 
 Run this line in a shell, then connect to http://localhost:8000
 ```bash
-  $ python -m CGIHTTPServer```
+  $ python -m CGIHTTPServer
+  ```
 
 ### Other forms
 You can find older Science Fair registration forms here:
@@ -57,11 +61,13 @@ github. You must also update the `release` tag and push it to github too.
 
 1. Delete the old release tag on github
 ```bash
-$ git push origin :refs/tags/release```
+$ git push origin :refs/tags/release
+```
 2. Change the local release tag to point to the latest commit
 ```bash
-$ git tag -f release```
+$ git tag -f release
+```
 3. Push the local release tag up to github
 ```bash
-$ git push origin release```
-
+$ git push origin release
+```
