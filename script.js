@@ -1,7 +1,8 @@
 $(document).ready(init_devo);
 
-// Edit this URL to point to your back end
-var BACK_END_URL="https://zelaza.pair.com/straz/org/scifair/bounce.py";
+// Edit this URL to point to the spreadsheet
+
+var GOOGLE_URL= 'https://script.google.com/macros/s/AKfycbxB9_2HSXXQAJCu4Tpg2nbkg11rayjX5SkIa_0BQdnu6EikQi4/exec';
 
 function init_devo(){
   TableFactory.install();
@@ -15,8 +16,9 @@ function init_devo(){
 
 function on_submit(e){
   var data = get_values();
+  data['prefix']='callback';
   console.log(data);
-  $.ajax({url: BACK_END_URL,
+  $.ajax({url: GOOGLE_URL,
 	  data: data,
 	  jsonp: 'callback',
 	  dataType: 'jsonp'

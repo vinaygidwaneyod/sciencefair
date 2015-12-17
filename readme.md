@@ -1,15 +1,15 @@
 # Devo Science Fair registration form
 
-The current site is at (https://rawgit.com/straz/devo-scifair/release/)[https://rawgit.com/straz/devo-scifair/release/].
+The current site is at [https://rawgit.com/straz/devo-scifair/release/](https://rawgit.com/straz/devo-scifair/release/).
 
 This is a web form that you can host pretty much anywhere, usually for free.
 
 Filling out the form posts results to a Google Sheets spreadsheet, which is free.
 
-This form requires one backend script (bounce.py) because you can't just post a web form
-directly to Google Sheets, due to something called cross-site scripting.
-This back end script provides cross-origin resource sharing ([CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing))
-which lets the form work smoothly.
+***Security note*** Since anyone can post to the spreadsheet, there's really no
+way to password-protect the sheet. This is not secure. If someone messes with the
+data, the only real recourse is to "undo" the changes by using the Version History
+feature of Google Docs. For a science fair setup, this should be good enough.
 
 ## How this works
 
@@ -17,33 +17,13 @@ The front end (html/js/css files) are pretty simple. There's an form (index.html
 a thank you page (thanks.html) to let you know the form was filed. script.js posts the form to the back end
 script.
 
-The back end script (cgi-bin/bounce.py) provides a CORS jsonp target for posting forms to Google Docs.
-
-When the user posts form data to this script, the script in turn posts the same data to Google Docs.
-
-See:
-  http://stackoverflow.com/questions/10000020/ajax-post-to-google-spreadsheet
-  https://mashe.hawksey.info/2011/10/google-spreadsheets-as-a-database-insert-with-apps-script-form-postget-submit-method/
+When the user clicks 'Submit', the form posts data to Google Docs.
 
 ## Usage:
  1. Front end: provide the web form (static html/js/css) files. Can be hosted anyplace.
- 2. Back end: install this script on a server (i.e. devotion.org)
- 3. Configure the front end to point to the back end: edit BACK_END_URL in script.js.
- 4. Configure GOOGLE_URL (below) to point to the target Google Sheets spreadsheet.
+ 2. Set up the spreadsheet.
+ 2. Configure GOOGLE_URL (below) to point to the target Google Sheets spreadsheet.
 
-## Testing the back end script
-You can test the back end script on your local machine.
-First, the back end script must be enabled for execution:
-```bash
-  $ chmod +x bounce.py
-  ```
-
-The folder containing this script must be named cgi-bin (e.g. `./cgi-bin/bounce.py`)
-
-Run this line in a shell, then connect to http://localhost:8000
-```bash
-  $ python -m CGIHTTPServer
-  ```
 
 ### Other forms
 You can find older Science Fair registration forms here:
@@ -71,3 +51,29 @@ $ git tag -f release
 ```bash
 $ git push origin release
 ```
+
+### Creating a new spreadsheet
+
+To store form results in a Google Sheets spreadsheet, do the following:
+
+1. Go to Google Docs and create a new spreadsheet
+2. Make sure the sheet name (lower left corner) is "Sheet1"
+3. Add the form's field names in the 1st row. Remember this is case-sensitive.
+  * A1 must be "Timestamp". 
+  * A2-A20 are the other field names, like user1, phone1, email1, etc.
+4. Share the spreadsheet. Click `Share` (upper right corner), then `Advanced`, and make sure 'Anyone with the link can edit'
+5. Go to `Tools` > `Script editor`. This will open an editor on a file called Code.gs.
+6. Replace the dummy Code.gs content with the Code.gs code from this repository.
+7. Hit `Save`, provide a new project name if needed.
+8. Choose `Select function` and choose `setUp`. Run it twice (use the triangle icon, or the `Run` menu). You may need to provide permissions.
+9. Choose `Publish` and `Deploy as web app...`
+10. A dialog will confirm the new URL. Update `GOOGLE_URL` in script.js.
+
+
+### Alternatives to rawgit.com
+
+Here are other ways to get free hosting for static html pages:
+
+[Github preview mode](http://htmlpreview.github.io/) is close, but this doesn't redirect cleanly to thanks.html.
+
+[Github pages](http://pages.github.com) are also an option.
