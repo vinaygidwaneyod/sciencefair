@@ -1,23 +1,14 @@
-P, LI, LABEL, SPAN {
-  font-size: 130%;
-}
-
 H2.registration {
   margin-top: 2em;
-}
-
-.row.schedule {
-  margin-bottom: .8em;
-}
-
-.jumbotron.banner h1 {
-  color: #3c763d;
 }
 
 .jumbotron.banner {
   background: #dff0d8;
   padding-top: 30px;
   padding-bottom: 30px;
+}
+.jumbotron.banner h1 {
+  color: #3c763d;
 }
 
 #names {
@@ -26,6 +17,10 @@ H2.registration {
 
 .names_header p {
    font-weight: bold;
+}
+
+.row.schedule {
+  margin-bottom: .8em;
 }
 
 .row.schedule:nth-child(odd) {
