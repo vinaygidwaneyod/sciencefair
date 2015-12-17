@@ -45,14 +45,23 @@ Run this line in a shell, then connect to http://localhost:8000
 You can find older Science Fair registration forms here:
     https://devosciencefair.wufoo.com/forms/devo-science-fair-2015-registration-form/
 
-### Editing this
+### Editing and updating github
 
-This code is posted on github.
+This code is posted on [github](https://github.com/straz/devo-scifair/).
 
-You can view it live by visiting a [tagged release](https://rawgit.com/straz/devo-scifair/v0.1/index.html)
+You can view it live [view it live](https://rawgit.com/straz/devo-scifair/release/index.html) using a service called `rawgit.com`.
 
-To update the tag and push it to github:
+The rawgit site uses the `release` tag to know which version of the
+code is safe for users.  After editing, push a new commit to
+github. You must also update the `release` tag and push it to github too.
+
+1. Delete the old release tag on github
 ```bash
-  $ git tag release
-  $ git push origin release
-```
+$ git push origin :refs/tags/release```
+2. Change the local release tag to point to the latest commit
+```bash
+$ git tag -f release```
+3. Push the local release tag up to github
+```bash
+$ git push origin release```
+
