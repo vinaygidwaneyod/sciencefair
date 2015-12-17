@@ -3,8 +3,8 @@ $(document).ready(show_result);
 function show_result(){
   var enc_result = location.search.split('r=')[1];
   var result = JSON.parse(decodeURIComponent(enc_result));
-  console.log('and the result is', result, result.status);
-  if (result.status == 'OK'){
+  console.log('Spreadsheet returned: ', result);
+  if (result.result == 'success'){
     $('div#reg_status').html('<i class="fa fa-check"></i>' +
 			     "<P>We'll see you at the fair!</P>")
       .addClass("alert alert-success");

@@ -21,7 +21,8 @@ function on_submit(e){
   $.ajax({url: GOOGLE_URL,
 	  data: data,
 	  jsonp: 'callback',
-	  dataType: 'jsonp'
+	  dataType: 'jsonp',
+	  success: callback
 	 });
   return false;    // e.preventDefault
 }
