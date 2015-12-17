@@ -1,0 +1,115 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+          integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <title>Devo Science Fair 2016</title>
+</head>
+<body>
+  <div class="jumbotron banner">
+      <div class="container">
+        <h1>Devo Science Fair</h1>
+	<p><b>Saturday March 12, 2016</b></p>
+        <p>Devotion School, Brookline, MA</p>
+      </div>
+    </div>
+
+<div class="container">
+
+<h3>Theme</h3>
+<p>This year's theme is <b>Earth and the Environment</b>, but projects are welcome to be on any science topic you like.</p>
+
+<h3>Schedule</h3>
+<div class="row schedule">
+  <span class="col-md-2">8:30am</span><span class="col-md-3">Registration/Set up opens</span><span class="col-md-7">The cafeteria will be open so students can set up their projects.</span>
+</div>
+
+<div class="row schedule">
+  <span class="col-md-2">9:00-12:00</span><span class="col-md-3">Science Fair/Science Expo</span><span class="col-md-7">
+The science fair opens to the public.<br/>
+At the science Expo, enjoy a New England Aquarium touch tank, exhibits, and activities presented by professional scientists.</span>
+</div>
+
+<div class="row schedule">
+  <span class="col-md-2">9:00-11:30</span><span class="col-md-3">Judging time</span><span class="col-md-7">The student participants present their projects to the 
+judges, view the other projects and visit the activity expo.</span>
+</div>
+<div class="row schedule">
+  <span class="col-md-2">12:00-12:30</span><span class="col-md-3">Award ceremony</span>
+</div>
+
+</p>
+<h3>How to make a great science fair project</h3>
+ <li>Find any topic that interests you</li>
+ <li>Ask a question</li>
+ <li>Make a prediction</li>
+ <li>Do an experiment to answer your question</li>
+<li>Write down the results</li>
+<li>Make a poster to share your project</li>
+<p>Learn more at:  <a href="http://devotionschool.org/curiosity">http://devotionschool.org/curiosity</a></p>
+
+<h2 class="registration">Registration form</h2>
+
+
+<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+
+
+<form>
+  <div class="form-group" id="project_title">
+    <label for="projectTitle">Project title</label>
+    <p class="help-block">What will your project be called? It's ok to change this later!</p>
+    <input type="text" class="form-control" id="projectTitle" placeholder="Project title">
+  </div>
+  <div class="form-group">
+    <label for="specialNeeds">Electrical outlet or other special needs</label>
+    <p class="help-block">Do you need an electrical outlet, or have any other special needs?</p>
+    <input type="text" class="form-control" id="specialNeeds" placeholder="">
+  </div>
+
+  <div class="form-group">
+    <label for="specialNeeds">Judging preference</label>
+    <div class="row">
+      <div class="checkbox col-md-6">
+      <label><input id="judging" type="checkbox"> If checked, I would rather NOT discuss my project with the scientists
+      judging the posters and NOT be eligible for rank of first, second or third place in my grade.</label>
+    </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Parents, if you can help, please check one or both:</label>
+    <div class="checkbox col-md-offset-1">
+      <label><input id="generalHelper" type="checkbox"> General help in advance of the fair - as needed</label>
+    </div>
+    <div class="checkbox col-md-offset-1">
+      <label><input id="helperOnFairDay" type="checkbox"> Parent Helper on day of the fair</label>
+    </div>
+    <div class="row">
+      <div class="form-group col-md-4 col-md-offset-1">
+      <label for="parentName">Parent's name</label>
+      <input type="text" class="form-control" id="parentName" placeholder="name">
+      </div>
+      <div class="form-group col-md-3">
+      <label for="parentPhone">phone</label>
+      <input type="text" class="form-control" id="parentPhone" placeholder="phone">
+      </div>
+      <div class="form-group col-md-3">
+      <label for="parentEmail">email</label>
+      <input type="text" class="form-control" id="parentEmail" placeholder="email">
+      </div>
+    </div>
+  </div>
+
+  <button id="form_submit" type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+
+</body>
+</html>
