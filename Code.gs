@@ -58,13 +58,13 @@ function handleResponse(e) {
     sheet.getRange(nextRow, 1, 1, row.length).setValues([row]);
     // return json success results
     return ContentService
-          .createTextOutput(JSON.stringify({"result":"success", "row": nextRow}))
-          .setMimeType(ContentService.MimeType.JSON);
+          .createTextOutput("callback(" + JSON.stringify({"result":"success", "row": nextRow}) + ")")
+          .setMimeType(ContentService.MimeType.JAVASCRIPT);
   } catch(e){
     // if error return this
     return ContentService
-          .createTextOutput(JSON.stringify({"result":"error", "error": e}))
-          .setMimeType(ContentService.MimeType.JSON);
+          .createTextOutput("callback(" + JSON.stringify({"result":"error", "error": e}) + ")")
+          .setMimeType(ContentService.MimeType.JAVASCRIPT);
   } finally { //release lock
     lock.releaseLock();
   }
