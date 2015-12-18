@@ -1,5 +1,5 @@
-H2.registration {
-  margin-top: 2em;
+.devo-nav.navbar-default {
+  margin-bottom: 0px;
 }
 
 .jumbotron.banner {
@@ -44,4 +44,9 @@ H2.registration {
 
 #reg_status .fa {
   font-size: 200%;
+}
+
+.btn.sign-up {
+  margin-top: 2em;
+  margin-bottom: 2em;
 }

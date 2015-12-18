@@ -13,6 +13,16 @@
     <title>Devo Science Fair 2016</title>
 </head>
 <body>
+
+<nav class="devo-nav navbar navbar-default navbar-static-top">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home<span class="sr-only">(current)</span></a></li>
+        <li ><a href="register.html">Registration</a></li>
+    </ul>
+  </div>
+</nav>
+
   <div class="jumbotron banner">
       <div class="container">
         <h1>Devo Science Fair</h1>
@@ -55,60 +65,8 @@ judges, view the other projects and visit the activity expo.</span>
 <li>Make a poster to share your project</li>
 <p>Learn more at:  <a href="http://devotionschool.org/curiosity">http://devotionschool.org/curiosity</a></p>
 
-<h2 class="registration">Registration form</h2>
+<a class="btn btn-primary sign-up" href="register.html" role="button">Sign up</a>
 
-
-<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
-
-
-<form>
-  <div class="form-group" id="project_title">
-    <label for="projectTitle">Project title</label>
-    <p class="help-block">What will your project be called? It's ok to change this later!</p>
-    <input type="text" class="form-control" id="projectTitle" placeholder="Project title">
-  </div>
-  <div class="form-group">
-    <label for="specialNeeds">Electrical outlet or other special needs</label>
-    <p class="help-block">Do you need an electrical outlet, or have any other special needs?</p>
-    <input type="text" class="form-control" id="specialNeeds" placeholder="">
-  </div>
-
-  <div class="form-group">
-    <label for="specialNeeds">Judging preference</label>
-    <div class="row">
-      <div class="checkbox col-md-6">
-      <label><input id="judging" type="checkbox"> If checked, I would rather NOT discuss my project with the scientists
-      judging the posters and NOT be eligible for rank of first, second or third place in my grade.</label>
-    </div>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <label>Parents, if you can help, please check one or both:</label>
-    <div class="checkbox col-md-offset-1">
-      <label><input id="generalHelper" type="checkbox"> General help in advance of the fair - as needed</label>
-    </div>
-    <div class="checkbox col-md-offset-1">
-      <label><input id="helperOnFairDay" type="checkbox"> Parent Helper on day of the fair</label>
-    </div>
-    <div class="row">
-      <div class="form-group col-md-4 col-md-offset-1">
-      <label for="parentName">Parent's name</label>
-      <input type="text" class="form-control" id="parentName" placeholder="name">
-      </div>
-      <div class="form-group col-md-3">
-      <label for="parentPhone">phone</label>
-      <input type="text" class="form-control" id="parentPhone" placeholder="phone">
-      </div>
-      <div class="form-group col-md-3">
-      <label for="parentEmail">email</label>
-      <input type="text" class="form-control" id="parentEmail" placeholder="email">
-      </div>
-    </div>
-  </div>
-
-  <button id="form_submit" type="submit" class="btn btn-primary">Submit</button>
-</form>
 </div>
 
 </body>
