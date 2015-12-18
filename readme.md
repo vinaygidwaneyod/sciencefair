@@ -13,9 +13,13 @@ feature of Google Docs. For a science fair setup, this should be good enough.
 
 ## How this works
 
-The front end (html/js/css files) are pretty simple. There's an form (index.html) to fill out, and
-a thank you page (thanks.html) to let you know the form was filed. script.js posts the form to the back end
-script.
+The front end is pretty simple:
+ * index.html - the home page
+ * register.html - the sign-up form
+ * thanks.html - displays confirmation for signing up
+ * style.css - the css
+ * script.js - posts the form to Google Sheets
+ * thanks.js - display confirmation
 
 When the user clicks 'Submit', the form posts data to Google Docs.
 
