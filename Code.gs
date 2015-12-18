@@ -1,21 +1,23 @@
-/* from https://gist.github.com/beatobongco/6c07a5637510bf16e006 */
+/* derived from https://gist.github.com/beatobongco/6c07a5637510bf16e006 */
 
 /*
-  1. Enter sheet name (default "Sheet1", bottom left corner of spreadsheet
-  2. Run > setup
-  3. Publish > Deploy as web app
-    - enter Project Version name and click 'Save New Version'
-    - set security level and enable service (most likely execute as 'me' and access 'anyone, even anonymously')
+Usage:
+1. Visit http://script.google.com. This will open an editor on a file called Code.gs.
+2. Replace the dummy Code.gs content with the Code.gs code from this repository.
+3. Replace the value of RESPONSES_DOC_ID with the ID of the spreadsheet you created to hold responses.
+4. Hit `Save`, provide a new project name if needed.
+5. Click `Share` (upper right corner). Make sure the script is only visible to authorized users (i.e. just yourself).
+6. Choose `Publish` and `Deploy as web app...`.
+7. Set security level and enable access.
+  * Execute as 'me' - this will let the script access the secure spreadsheet.
+  * Allow access for 'anyone, even anonymously' - this will let anyone post data to this script.
+8. A dialog will confirm the new URL. Update `GOOGLE_URL` in script.js.
 
-  4. Copy the 'Current web app URL' and post this in your form/script action
-
-  5. Insert column names on your destination sheet matching the parameter names of the data you are passing in (exactly matching case)
 */
 
-var SHEET_NAME = "Sheet1";
-var SCRIPT_PROP = PropertiesService.getScriptProperties(); // new property service
+var RESPONSES_DOC_ID = '1QTRYH2-EXAMPLE-DUMMY-CODE-2wauckv4C8b61Y';
+var SHEET_NAME = 'Sheet1';
 
-// If you don't want to expose either GET or POST methods you can comment out the appropriate function
 function doGet(e){
   return handleResponse(e);
 }
@@ -24,17 +26,16 @@ function doPost(e){
   return handleResponse(e);
 }
 
-function handleResponse(e) {
-  // shortly after my original solution Google announced the LockService[1]
-  // this prevents concurrent access overwritting data
-  // [1] http://googleappsdeveloper.blogspot.co.uk/2011/10/concurrency-and-google-apps-script.html
+function handleResponse(e){
+  // LockService prevents concurrent access overwriting data
+  // see http://googleappsdeveloper.blogspot.co.uk/2011/10/concurrency-and-google-apps-script.html
   // we want a public lock, one that locks for all invocations
   var lock = LockService.getPublicLock();
   lock.waitLock(30000);  // wait 30 seconds before conceding defeat.
 
   try {
     // next set where we write the data - you could write to multiple/alternate destinations
-    var doc = SpreadsheetApp.openById(SCRIPT_PROP.getProperty("key"));
+    var doc = SpreadsheetApp.openById(RESPONSES_DOC_ID);
     var sheet = doc.getSheetByName(SHEET_NAME);
 
     // we'll assume header is in row 1 but you can override with header_row in GET/POST data
@@ -68,9 +69,4 @@ function handleResponse(e) {
   } finally { //release lock
     lock.releaseLock();
   }
-}
-
-function setup() {
-    var doc = SpreadsheetApp.getActiveSpreadsheet();
-    SCRIPT_PROP.setProperty("key", doc.getId());
 }

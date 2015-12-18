@@ -65,14 +65,23 @@ To store form results in a Google Sheets spreadsheet, do the following:
 3. Add the form's field names in the 1st row. Remember this is case-sensitive.
   * A1 must be "Timestamp". 
   * A2-A20 are the other field names, like user1, phone1, email1, etc.
-4. Share the spreadsheet. Click `Share` (upper right corner), then `Advanced`, and make sure 'Anyone with the link can edit'
-5. Go to `Tools` > `Script editor`. This will open an editor on a file called Code.gs.
-6. Replace the dummy Code.gs content with the Code.gs code from this repository.
-7. Hit `Save`, provide a new project name if needed.
-8. Choose `Select function` and choose `setUp`. Run it twice (use the triangle icon, or the `Run` menu). You may need to provide permissions.
-9. Choose `Publish` and `Deploy as web app...`
-10. A dialog will confirm the new URL. Update `GOOGLE_URL` in script.js.
+4. Limit the spreadsheet to authorized people only. Click `Share` (upper right corner), then `Advanced`, and make sure 'can edit' is only enabled for authorized users.
 
+Create the proxy script. This script is not bound to the spreadsheet,
+which means it can have different access permissions. We want the
+spreadsheet to be restricted (so random people can't read the data)
+but the script to be public (so random people can post data to it).
+
+1. Visit [script.google.com](http://script.google.com). This will open an editor on a file called Code.gs.
+2. Replace the dummy Code.gs content with the Code.gs code from this repository.
+3. Replace the value of RESPONSES_DOC_ID with the ID of the spreadsheet you just created (above).
+4. Hit `Save`, provide a new project name if needed.
+5. Click `Share` (upper right corner). Make sure the script is only visible to authorized users (i.e. just yourself).
+6. Choose `Publish` and `Deploy as web app...`. 
+7. Set security level and enable access. 
+  * Execute as 'me' - this will let the script access the secure spreadsheet.
+  * Allow access for 'anyone, even anonymously' - this will let anyone post data to this script.
+8. A dialog will confirm the new URL. Update `GOOGLE_URL` in script.js.
 
 ### Alternatives to rawgit.com
 

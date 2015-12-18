@@ -1,8 +1,8 @@
 $(document).ready(init_devo);
 
-// Edit this URL to point to the spreadsheet
+// Edit this URL to point to the script
 
-var GOOGLE_URL= 'https://script.google.com/macros/s/AKfycbxB9_2HSXXQAJCu4Tpg2nbkg11rayjX5SkIa_0BQdnu6EikQi4/exec';
+var GOOGLE_URL= 'https://script.google.com/macros/s/AKfycbyCQCcpJjUZ5RlkoCWfAf69C3OEGTiWJ3k58lnVUee-9wPFkUV8/exec';
 
 function init_devo(){
   TableFactory.install();
