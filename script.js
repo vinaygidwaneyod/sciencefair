@@ -34,7 +34,7 @@ function callback(result){
 }
 
 function get_fields(){
-  return $.map($('form input'), function(x, i){ return $(x).attr('id'); });
+  return $.map($('form input, form select'), function(x, i){ return $(x).attr('id'); });
 }
 
 function get_values(){
@@ -129,9 +129,10 @@ var TableFactory = {
   make_header : function(){
     return $('<div/>', {'class': 'row names_header'}).append(
       this.make_one_header('col-md-4', 'Participating students'),
-      this.make_one_header('col-md-2', 'class'),
-      this.make_one_header('col-md-3', 'phone'),
-      this.make_one_header('col-md-3', 'email (parent or child)')
+      this.make_one_header('col-md-1', 'grade'),
+      this.make_one_header('col-md-2', 'phone'),
+      this.make_one_header('col-md-3', 'email (parent or child)'),
+      this.make_one_header('col-md-2', 'school')
     );
   },
 
@@ -150,10 +151,11 @@ var TableFactory = {
     return $('<div/>', {'class': 'row child'})
       .css('display','none')
       .append(
-	this.make_input('col-md-4','name'+N, 'name'+N, 'text', 'Student ' + N + '\'s name'),
-	this.make_input('col-md-2','class'+N, 'class'+N, 'text', 'class'),
-	this.make_input('col-md-3','phone'+N, 'phone'+N, 'text', 'phone'),
-	this.make_input('col-md-3','email'+N, 'email'+N, 'email', 'email')
+	this.make_input('col-md-4','name'+N, 'name'+N, 'text', 'Student ' + N + '\'s first and last name'),
+	this.make_select('col-md-1','grade'+N, 'grade'+N, this.grades),
+	this.make_input('col-md-2','phone'+N, 'phone'+N, 'tel', 'phone'),
+	this.make_input('col-md-3','email'+N, 'email'+N, 'email', 'email'),
+	this.make_select('col-md-2','school'+N, 'school'+N, this.schools)
       );
   },
 
@@ -165,6 +167,24 @@ var TableFactory = {
 			    'type': type,
 			    'id':for_id,
 			    'placeholder':placeholder})
+	  );
+  },
+
+  grades : ['K', 1, 2, 3, 4, 5, 6, 7, 8, 'other'],
+
+  schools : ['Devotion', 'Upper Devotion', 'Baker', 'Driscoll',
+	     'Heath', 'Pierce', 'Lawrence', 'Lincoln', 'Runkle', 'Other'],
+
+  make_select : function(col_class, for_id, label, options){
+    var select = $('<select/>', {'class': 'form-control',
+				 'id': for_id});
+    $.each(options, function(i,v) {
+	     select.append($('<option/>',{value: v}).text(v));
+	   });
+    return $('<div/>', {'class': 'form_group ' + col_class})
+          .append(
+             $('<label/>', {'class': 'sr-only', 'for': for_id}).text(label),
+	     select
 	  );
    }
 };
