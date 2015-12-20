@@ -29,7 +29,8 @@
     background: #EEE;
 }
 
-#names .row:nth-child(odd) input {
+#names .row:nth-child(odd) input,
+#names .row:nth-child(odd) select {
     background: #EEE;
 }
 
