@@ -1,6 +1,6 @@
 # Devo Science Fair registration form
 
-The current site is at [https://rawgit.com/straz/devo-scifair/release/](https://rawgit.com/straz/devo-scifair/release/).
+The current site is at [http://devotionschool.github.io/sciencefair/](http://devotionschool.github.io/sciencefair/)
 
 This is a web form that you can host pretty much anywhere, usually for free.
 
@@ -32,24 +32,8 @@ You can find older Science Fair registration forms here:
 
 This code is posted on [github](https://github.com/straz/devo-scifair/).
 
-You can view it live [view it live](https://rawgit.com/straz/devo-scifair/release/index.html) using a service called `rawgit.com`.
-
-The rawgit site uses the `release` tag to know which version of the
-code is safe for users.  After editing, push a new commit to
-github. You must also update the `release` tag and push it to github too.
-
-1. Delete the old release tag on github
-```bash
-$ git push origin :refs/tags/release
-```
-2. Change the local release tag to point to the latest commit
-```bash
-$ git tag -f release
-```
-3. Push the local release tag up to github
-```bash
-$ git push origin release
-```
+You can view it live [view it live](http://devotionschool.github.io/sciencefair/)
+using a free service from Github.com called [Github pages](http://pages.github.com). The html in the `gh-pages` branch on github are available as a web site.
 
 ### Creating a new spreadsheet
 
@@ -80,10 +64,3 @@ random people can post data to it).
   * Allow access for 'anyone, even anonymously' - this will let anyone post data to this script.
 8. A dialog will confirm the new URL. Update `GOOGLE_URL` in script.js.
 
-### Alternatives to rawgit.com
-
-Here are other ways to get free hosting for static html pages:
-
-[Github preview mode](http://htmlpreview.github.io/) is close, but this doesn't redirect cleanly to thanks.html.
-
-[Github pages](http://pages.github.com) are also an option.
