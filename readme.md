@@ -9,8 +9,9 @@ Filling out the form posts results to a Google Sheets spreadsheet, which is free
 ## How this works
 
 The front end is pretty simple:
- * index.html - the home page
+ * index.html - the home page. This currently redirects to the info page at `http://brookline.k12.ma.us`
  * register.html - the sign-up form
+ * info.html - draft content for the town info page. Not intended for public access.
  * thanks.html - displays confirmation for signing up
  * style.css - the css
  * script.js - posts the form to Google Sheets
