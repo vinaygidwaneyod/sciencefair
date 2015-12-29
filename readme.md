@@ -77,5 +77,5 @@ random people can post data to it).
 * `brookline.k12.ma.us`
   * This domain is managed by the Town of Brookline
   * It contains content for many schools, not just Devo.
-  * The site runs an app called [SchoolWires)[http://schoolwires.com], a content management server.
+  * The site runs an app called [SchoolWires](http://schoolwires.com), a content management server.
   * For assistance, contact [Gabriela Kroszynski](mailto:frinulia@hotmail.com) or [Tyler Vuylsteke](mailto:Tyler_Vuylsteke@brookline.k12.ma.us)
