@@ -1,3 +1,13 @@
+.logo {
+  border: none;
+  margin-top: 9px;
+  margin-left: 7px;
+  width: 32px;
+  height: 32px;
+  background: url("devologo.png") no-repeat;
+  background-size: contain;
+}
+
 .devo-nav.navbar-default {
   margin-bottom: 0px;
 }
