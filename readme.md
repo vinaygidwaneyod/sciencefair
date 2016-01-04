@@ -1,42 +1,85 @@
-# Devo Science Fair registration form
+# Devo Science Fair
 
-The current site is at [http://sciencefair.devotionschool.com/register.html](http://sciencefair.devotionschool.com/register.html)
+View this site at [http://sciencefair.devotionschool.org](http://sciencefair.devotionschool.org)
 
-This points to a web form that you can host pretty much anywhere, usually for free.
+The Science Fair site has
+  * info about the science fair
+  * a registration form to sign up for the science fair
+  * a spreadsheet to hold all the form data from people who sign up
 
-Filling out the form posts results to a Google Sheets spreadsheet, which is free.
+### Copying or updating this code
+
+You are welcome to make a copy of this code to run a similar site in
+the future, or somewhere else. It's a good example of how to capture
+data from web form and save it securely in a web spreadsheet.
+
+This source code is posted on [github](https://github.com/DevotionSchool/sciencefair).
+
+You can [view it live](http://devotionschool.github.io/sciencefair/)
+thanks to a free service called [Github pages](http://pages.github.com). All of the static (html/css/javascript) files in the `gh-pages` branch on github are available live at the project's [github pages url](http://devotionschool.github.io/sciencefair/).
+
+### Other forms
+You can find older Science Fair registration forms here:
+    https://devosciencefair.wufoo.com/forms/devo-science-fair-2015-registration-form/
 
 ## How this works
 
-The front end is pretty simple:
+The Devo Science Fair site has three parts:
+ * the front end: the pretty web pages, including the sign up form. This is hosted for free on [Github pages](http://pages.github.com).
+ * the back end: a Google Docs spreadsheet (with a [web script](https://github.com/DevotionSchool/sciencefair/blob/gh-pages/Code.gs)) that stores all the registrations. This is also hosted for free, by Google.
+ * the Town site: These are the official Devo web pages, hosted for us at [brookline.k12.ma.us](http://brookline.k12.ma.us) by the Town of Brookline.
+
+Here are the **front end** files:
+
  * index.html - the home page. This currently redirects to the info page at `http://brookline.k12.ma.us`
- * register.html - the sign-up form
+ * register.html - the sign up form
  * info.html - draft content for the town info page. Not intended for public access.
  * thanks.html - displays confirmation for signing up
  * style.css - the css
  * script.js - posts the form to Google Sheets
  * thanks.js - display confirmation
 
-When the user clicks 'Submit', the form posts data to Google Docs.
+For the front end, we use a visual framework called [Twitter Bootstrap](http://getbootstrap.com), which makes the pages look nice and easy to edit. You can see links to Bootstrap css and js files in our html pages.
 
-## Usage:
- 1. Front end: provide the web form (static html/js/css) files. Can be hosted anyplace.
+When the user clicks 'Submit', the form (front end) posts data to Google Docs (back end).
+
+## How to use this code
+If you want to set up a copy of this site, do the following:
+
+ 1. Set up the front end: provide the web form (static html/js/css) files. This can be hosted anyplace.
  2. Set up the spreadsheet (see below)
  3. Set up the back end script (see below) to point to the spreadsheet.
  4. Configure GOOGLE_URL (in script.js) to point to the back end script.
 
-### Other forms
-You can find older Science Fair registration forms here:
-    https://devosciencefair.wufoo.com/forms/devo-science-fair-2015-registration-form/
+### 1. Set up the front end
 
-### Editing and updating github
+Grab a copy of the files in this repository and put them on a web
+server of your choosing. The url will be something you configure with
+your hosting provider.
 
-This code is posted on [github](https://github.com/DevotionSchool/sciencefair).
+Our site is hosted on [Github pages](http://pages.github.com), which is configured
+to be live at [http://sciencefair.devotionschool.org](http://sciencefair.devotionschool.org).
 
-You can view it live [view it live](http://devotionschool.github.io/sciencefair/)
-using a free service from Github.com called [Github pages](http://pages.github.com). The html in the `gh-pages` branch on github are available as a web site.
 
-### Creating a new spreadsheet
+### 2. Set up a spreadsheet
+
+We use Google Sheets (part of Google Docs) to store all the data from
+the sign up forms. When a student fills out the sign up form and hits
+'Submit', it adds a row to the spreadsheet with all the data they
+entered on the form. The spreadsheet is restricted so that only
+authorized Science Fair staff can view the data.
+
+You can use this code to set up your own copy of this web form with
+your own spreadsheet.  You can easily modify the form and spreadsheet
+to store any sign up info you wish.
+
+There are two parts to this:
+  * A spreadsheet to hold the data. 
+    * Each column contains the answers to one question on the form. Add new columns to correspond to your form's questions.
+    * Each row contains the response from each visitor. Rows get added over time as people submit the form.
+  * A back-end script that captures the data. This is written in [Google Script](https://www.google.com/script/start/), which is basically exactly the same as Javascript, except it knows how to modify Google documents.
+    * The front end contains a form that sends the data (using http `POST`) to the back end script.
+    * The [back end script](https://github.com/DevotionSchool/sciencefair/blob/gh-pages/Code.gs) reads the `POST` data and turns it into a new spreadsheet row.
 
 To store form results in a Google Sheets spreadsheet, do the following:
 
@@ -47,7 +90,7 @@ To store form results in a Google Sheets spreadsheet, do the following:
   * A2-A20 are the other field names, like user1, phone1, email1, etc.
 4. Limit the spreadsheet to authorized people only. Click `Share` (upper right corner), then `Advanced`, and make sure 'can edit' is only enabled for authorized users.
 
-### Creating the back end script
+### 3. Set up the back end script
 
 This script is not bound to the spreadsheet, which means it can have
 different access permissions. We want the spreadsheet to be restricted
@@ -63,7 +106,7 @@ random people can post data to it).
 7. Set security level and enable access. 
   * Execute as 'me' - this will let the script access the secure spreadsheet.
   * Allow access for 'anyone, even anonymously' - this will let anyone post data to this script.
-8. A dialog will confirm the new URL. Update `GOOGLE_URL` in script.js.
+8. A dialog will confirm the new URL. Update `GOOGLE_URL` in script.js, which is part of the front end.
 
 ## Who are Devo's hosting providers?
 
