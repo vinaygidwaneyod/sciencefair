@@ -2,6 +2,9 @@ $(document).ready(show_result);
 
 function show_result(){
   var enc_result = location.search.split('r=')[1];
+  if (enc_result == undefined) {
+    enc_result = '"missing data"';
+  }
   var result = JSON.parse(decodeURIComponent(enc_result));
   console.log('Spreadsheet returned: ', result);
   if (result.result == 'success'){
