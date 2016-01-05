@@ -8,6 +8,10 @@
   background-size: contain;
 }
 
+.glyphicon-download-alt {
+ margin-right: .5em;
+}
+
 .devo-nav.navbar-default {
   margin-bottom: 0px;
 }

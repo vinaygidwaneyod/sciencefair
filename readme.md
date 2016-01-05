@@ -29,6 +29,8 @@ The Devo Science Fair site has three parts:
  * the back end: a Google Docs spreadsheet (with a [web script](https://github.com/DevotionSchool/sciencefair/blob/gh-pages/Code.gs)) that stores all the registrations. This is also hosted for free, by Google.
  * the Town site: These are the official Devo web pages, hosted for us at [brookline.k12.ma.us](http://brookline.k12.ma.us) by the Town of Brookline.
 
+When the user clicks 'Submit', the form (front end) posts data to Google Docs (back end).
+
 Here are the **front end** files:
 
  * index.html - the home page. This currently redirects to the info page at `http://brookline.k12.ma.us`
@@ -39,17 +41,18 @@ Here are the **front end** files:
  * script.js - posts the form to Google Sheets
  * thanks.js - display confirmation
 
-For the front end, we use a visual framework called [Twitter Bootstrap](http://getbootstrap.com), which makes the pages look nice and easy to edit. You can see links to Bootstrap css and js files in our html pages.
-
-When the user clicks 'Submit', the form (front end) posts data to Google Docs (back end).
+For the front end, we use a visual framework called [Twitter
+Bootstrap](http://getbootstrap.com), which makes the pages look nice
+and easy to edit. In the html files, you can see `<link>`s which load Bootstrap's
+css and js files.
 
 ## How to use this code
 If you want to set up a copy of this site, do the following:
 
- 1. Set up the front end: provide the web form (static html/js/css) files. This can be hosted anyplace.
+ 1. Set up the front end: provide the web form (static html/css/javascript) files. This can be hosted anyplace.
  2. Set up the spreadsheet (see below)
  3. Set up the back end script (see below) to point to the spreadsheet.
- 4. Configure GOOGLE_URL (in script.js) to point to the back end script.
+ 4. Configure `GOOGLE_URL` (in script.js) to point to the back end script.
 
 ### 1. Set up the front end
 
@@ -58,7 +61,9 @@ server of your choosing. The url will be something you configure with
 your hosting provider.
 
 Our site is hosted on [Github pages](http://pages.github.com), which is configured
-to be live at [http://sciencefair.devotionschool.org](http://sciencefair.devotionschool.org).
+to be at [http://sciencefair.devotionschool.org](http://sciencefair.devotionschool.org).
+
+Github pages uses the `CNAME` file, which contains the preferred hostname.
 
 
 ### 2. Set up a spreadsheet
@@ -78,8 +83,9 @@ There are two parts to this:
     * Each column contains the answers to one question on the form. Add new columns to correspond to your form's questions.
     * Each row contains the response from each visitor. Rows get added over time as people submit the form.
   * A back-end script that captures the data. This is written in [Google Script](https://www.google.com/script/start/), which is basically exactly the same as Javascript, except it knows how to modify Google documents.
-    * The front end contains a form that sends the data (using http `POST`) to the back end script.
-    * The [back end script](https://github.com/DevotionSchool/sciencefair/blob/gh-pages/Code.gs) reads the `POST` data and turns it into a new spreadsheet row.
+    * The front end contains a form that sends the data (using HTTP POST) to the back end script.
+    * The [back end script](https://github.com/DevotionSchool/sciencefair/blob/gh-pages/Code.gs)
+reads the POST data and turns it into a new spreadsheet row.
 
 To store form results in a Google Sheets spreadsheet, do the following:
 
