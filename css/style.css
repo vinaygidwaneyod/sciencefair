@@ -4,7 +4,7 @@
   margin-left: 7px;
   width: 32px;
   height: 32px;
-  background: url("devologo.png") no-repeat;
+  background: url("../pix/devologo.png") no-repeat;
   background-size: contain;
 }
 
@@ -66,4 +66,27 @@
 .btn.sign-up {
   margin-top: 2em;
   margin-bottom: 2em;
+}
+
+.entry_count {
+  font-size: 700%;
+  font-weight: normal;
+}
+
+/* judging signup form */
+
+.judging .frame2 {
+  display: none
+}
+
+.judging .frame2 button.ok {
+  margin-top: 2em;
+}
+
+.has-error label {
+    color: #a94442;
+}
+
+.spinner {
+  display: none;
 }
