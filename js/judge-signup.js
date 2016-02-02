@@ -3,6 +3,7 @@ $(document).ready(init_judge);
 function init_judge(){
   $('button#form_submit_yes').click(function(){return on_submit_judge(true);});
   $('button#form_submit_no').click(function(){return on_submit_judge(false);});
+  $('.frame2 .btn.ok').click(signup_frame1);
 }
 
 var GOOGLE_URL = 'https://script.google.com/macros/s/AKfycbzi6XXUKS5sodYk_Gi9113-epceiLLh_C4GN6fas2n4JWGQE_I/exec';
@@ -36,7 +37,7 @@ function on_submit_judge(optIn){
 }
 
 function callback_judge(result){
-  console.log('call success', result);
+  console.log('callback result', result);
   signup_frame2(result);
   return false;
 }
@@ -82,10 +83,8 @@ function signup_frame2(result_struct){
   $('.spinner').hide();
   var result = result_struct.result;
   var optOut = result_struct.optOut;
-  console.log('f2 result=', result, optOut);
   $('.judging .frame1').hide(200);
   if (result == 'success'){
-    console.log('win', result);
     if (optOut == undefined){
       $('.judging .frame2 .success').show();
       $('.judging .frame2 .remove').hide();
@@ -95,7 +94,6 @@ function signup_frame2(result_struct){
     }
     $('.judging .frame2 .fail').hide();
   } else {
-    console.log('lose', result);
     $('.judging .frame2 .fail').show();
     $('.judging .frame2 .fail .reason').html(result);
     $('.judging .frame2 .success').hide();
