@@ -50,14 +50,19 @@ function get_values_judge(optIn){
   var fields = get_fields_judge();
   var data = {};
   for (var i in fields){
+    var is_checkbox = false;
     var key = fields[i];
     var selector = key;
     if ($('#'+key).attr('type') == 'checkbox'){
       selector = key+':checked';
+      is_checkbox = true;
     }
     var value = $('form #'+selector).val();
     if (!$('form #'+selector).is(':visible')){
       value = '';
+    }
+    if (is_checkbox && value == 'on'){
+      value = 'yes';
     }
     if (value != '' && value != undefined){
       if (key == 'yesEmail' && !optIn){
