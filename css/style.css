@@ -1,3 +1,9 @@
+.register-logo {
+    width: 130px;
+    float: right;
+    margin-right: 5em;
+}
+
 .logo {
   border: none;
   margin-top: 9px;
