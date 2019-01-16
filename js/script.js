@@ -172,7 +172,7 @@ var TableFactory = {
 
   grades : ['K', 1, 2, 3, 4, 5, 6, 7, 8, 'other'],
 
-  schools : ['Lower Devotion', 'Upper Devotion', 'Baker', 'Driscoll',
+  schools : ['Coolidge Corner', 'Baker', 'Driscoll',
 	     'Heath', 'Pierce', 'Lawrence', 'Lincoln', 'Runkle', 'Other'],
 
   make_select : function(col_class, for_id, label, options){
