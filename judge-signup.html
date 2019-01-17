@@ -3,78 +3,95 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
-          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
-          integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	    crossorigin="anonymous"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+	    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
     <script src="js/judge-signup.js"></script>
-    <title>Coolidge Corner Science Fair 2019</title>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Coolidge Corner Science Fair 2019 - judges signup</title>
 </head>
 <body>
 
-<nav class="devo-nav navbar navbar-default navbar-static-top">
-  <div class="container-fluid">
-    <div class="navbar-header"><div class="logo"></div></div>
-    <ul class="nav navbar-nav">
-        <li><a href="http://www.brookline.k12.ma.us/devotion/pto">Coolidge Corner PTO<span class="sr-only">(current)</span></a></li>
-        <li><a href="http://www.brookline.k12.ma.us/devotion/sciencefair">Science Fair Home</a></li>
-        <li class="active"><a href="#">Registration<span class="sr-only">(current)</span></a></li>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#"><div class="logo"></div></a>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+	<a class="nav-link" href="http://www.brookline.k12.ma.us/devotion/pto">Coolidge Corner PTO<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+	<a class="nav-link" href="http://www.brookline.k12.ma.us/devotion/sciencefair">Science Fair Home</a>
+      </li>
+      <li class="nav-item">
+	  <a class="nav-link" href="./register">Registration</a>
+      </li>
+      <li class="nav-item active">
+	  <a class="nav-link" href="#">Judges signup</span></a>
+      </li>
     </ul>
-  </div>
-</nav>
-
+  </nav>
+    
 <div class="container">
-<h2 class="registration">Sign up for Science Fair judging</h2>
+  <h2>Sign up for Science Fair judging</h2>
 
-<form>
-      <div class="container">
-      <P>I'm interested in being a judge for the Coolidge Corner Science Fair on Saturday, March 2, 2019.</p>
-      <div class="form-group col-md-5">
-      <label for="name">Name</label>
-      <input type="text" class="form-control" id="name" placeholder="name">
+  <form>
+
+    <label class="mt-3" for="name">I'm interested in being a judge for the Coolidge Corner Science Fair on Saturday, March 2, 2019.</label>
+    <div class="form-row">
+      <div class="col-8">
+	<input type="text" class="form-control" id="name" placeholder="Name">
       </div>
-      <div class="form-group col-md-4" id="emailGroup">
-      <label for="yesEmail">Email</label>
-      <input type="text" class="form-control" id="yesEmail" placeholder="email">
+      <div class="col-4">
+	<input type="email" class="form-control" id="yesEmail" placeholder="Email">
       </div>
-      <div class="col-md-12"></div>
-      <div class="form-group col-md-8">
-      <label for="expertise">Expertise</label>
-      <input type="text" class="form-control" id="expertise" placeholder="Degree and area of expertise">
+    </div>
+
+    <label class="mt-3" for="expertise">Expertise</label>
+    <div class="form-row">
+      <div class="col-8">
+	<input type="text" class="form-control" id="expertise" placeholder="Degree and area of expertise">
       </div>
-      <div class="col-md-12"></div>
-      <div class="col-md-5">
-      <label class="checkbox-inline" for="haveDevoKids"><p>&nbsp;</p>
-       <input type="checkbox" id="haveDevoKids">Are you the parent of any children currently attending Coolidge Corner School?</input>
-      </label>
-      </div>
-      <div class="form-group col-md-4">
-      <label for="kidsAndGrades">If yes, what grades are they in?</label>
-      <input type="text" class="form-control" id="kidsAndGrades" placeholder="My kids' grades">
-      </div>
-      <div class="col-md-12">
-      <label class="checkbox-inline" for="nonDevoKids">
-       <input type="checkbox" id="nonDevoKids">Are you the parent of any children attending another Brookline K-8 school who are participating in the Coolidge Corner Science Fair?</input>
-      </label>
-      </div>
-      <div class="col-md-12">&nbsp;</div>
-      <div class="col-md-12">
-      <label class="checkbox-inline" for="pastJudge">
-       <input type="checkbox" id="pastJudge">Have you been a Coolidge Corner Science Fair judge in the past?</input>
-      </label>
-      </div>
-      <div class="col-md-12">&nbsp;</div>
+    </div>
+
+    <div class="form-row">
+      <div class="col-6">
+	<div class="form-check mt-3">
+	  <input class="form-check-input" type="checkbox" id="haveDevoKids"></input>
+	  <label class="form-check-label" for="haveDevoKids">Are you the parent of any children currently attending Coolidge Corner School?</label>
+	</div>
       </div>
 
-      <div class="container judging">
+      <div class="col-6">
+	<label class="mt-3" for="kidsAndGrades">If yes, what grades are they in?</label>
+	<input type="text" class="form-control" id="kidsAndGrades" placeholder="My kids' grades">
+      </div>
+    </div>
+    
+    <div class="form-check col-12 mt-3">
+      <input class="form-check-input" type="checkbox" id="nonDevoKids"></input>
+      <label class="form-check-label" for="nonDevoKids">Are you the parent of any children attending another Brookline K-8 school who are participating in the Coolidge Corner Science Fair?</label>
+    </div>
+
+    <div class="form-check col-12 mt-3 mb-5">
+      <input class="form-check-input" type="checkbox" id="pastJudge"></input>
+      <label class="form-check-label" for="pastJudge">Have you been a Coolidge Corner Science Fair judge in the past?</label>
+    </div>
+
+
+    <div class="container judging">
       <div class="frame1">
-      <button id="form_submit_yes" type="submit" class="btn btn-primary">Yes, I'm interested</button>
-      <img id="optin_spinner" class="spinner" src="pix/spinner.gif">
-      <p style="margin-top: 4em">If you're not interested, and you wish to be removed from our mailing list, click here. Don't forget to give us your email address (above)!</P>
-      <button id="form_submit_no" type="submit" class="btn btn-warning">No, please remove me</button>
-      <img id="optout_spinner" class="spinner" src="pix/spinner.gif">
+	<button id="form_submit_yes" type="submit" class="btn btn-primary">Yes, I'm interested</button>
+	<i id="optin_spinner" class="fa fa-gear fa-spin fa-2x spinner align-middle"></i>
+	<p style="margin-top: 4em">If you're not interested, and you wish to be removed from our mailing list, click here. Don't forget to give us your email address (above)!</P>
+	<button id="form_submit_no" type="submit" class="btn btn-warning">No, please remove me</button>
+	<i id="optout_spinner" class="fa fa-gear fa-spin fa-2x spinner align-middle"></i>
       </div>
 
       <div class="frame2">
@@ -97,9 +114,9 @@
 
       </div>
 
-</form>
+  </form>
 
- </div>
+</div>
 
 </body>
 </html>

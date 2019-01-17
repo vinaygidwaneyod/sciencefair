@@ -94,5 +94,6 @@
 }
 
 .spinner {
-  display: none;
+    display: none;
+    color: #777;
 }
