@@ -3,28 +3,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" 
-	  integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
-	    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	    crossorigin="anonymous"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+	    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
     <script src="js/script.js"></script>
-    <title>Coolidge Corner Science Fair 2019</title>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Coolidge Corner Science Fair 2019 - registration</title>
 </head>
+
 <body>
 
-<nav class="devo-nav navbar navbar-default navbar-static-top">
-  <div class="container-fluid">
-    <div class="navbar-header"><div class="logo"></div></div>
-    <ul class="nav navbar-nav">
-        <li><a href="http://www.brookline.k12.ma.us/devotion/pto">Coolidge Corner PTO<span class="sr-only">(current)</span></a></li>
-        <li><a href="http://www.brookline.k12.ma.us/devotion/sciencefair">Science Fair Home</a></li>
-        <li class="active"><a href="#">Registration<span class="sr-only">(current)</span></a></li>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#"><div class="logo"></div></a>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+	<a class="nav-link" href="http://www.brookline.k12.ma.us/devotion/pto">Coolidge Corner PTO<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+	<a class="nav-link" href="http://www.brookline.k12.ma.us/devotion/sciencefair">Science Fair Home</a>
+      </li>
+      <li class="nav-item active">
+	<a href="#" class="nav-link"> Registration</a>
+      </li>
     </ul>
-  </div>
-</nav>
+  </nav>
+
 
   <div class="jumbotron banner">
       <div class="container">
@@ -37,61 +48,66 @@
 
 
 <div class="container">
-<a class="btn btn-info" href="docs/2018-packet.pdf">
-<span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download info packet</a>
+  <p><a class="btn btn-info" href="docs/2018-packet.pdf">
+      <i class="fa fa-download mr-2"></i> Download info packet</a>
+  </p>
 
-<h2 class="registration">Registration form</h2>
+<h2 class="mt-5">Registration form</h2>
 
 <form>
-  <div class="form-group" id="project_title">
-    <label for="projectTitle">Project title (optional)</label>
-    <p class="help-block">What will your project be called? It's ok to change this later!</p>
-    <input type="text" class="form-control" id="projectTitle" placeholder="Project title">
-  </div>
-  <div class="form-group">
-    <label for="specialNeeds">Electrical outlet or other special needs</label>
-    <p class="help-block">Do you need an electrical outlet, or have any other special needs?</p>
-    <input type="text" class="form-control" id="specialNeeds" placeholder="">
-  </div>
 
-  <div class="form-group">
-    <label for="specialNeeds">Judging preference</label>
-    <div class="row">
-      <div class="checkbox col-md-6">
-      <label><input id="judging" type="checkbox"> If checked, I would rather NOT discuss my project with the scientists
-      judging the posters and NOT be eligible for rank of first, second or third place in my grade.</label>
-    </div>
+  <div class="form-row mt-3" id="project_title">
+    <div class="col-12">
+      <label for="projectTitle"><b>Project title (optional)</b><br/>
+	What will your project be called? It's ok to change this later!</label>
+      <input type="text" class="form-control" id="projectTitle" placeholder="Project title">
     </div>
   </div>
 
-  <div class="form-group">
-    <label for="regionalsOptOut">Regional Science Fair</label>
-    <div class="row">
-      <div class="checkbox col-md-6">
-      <p>For <b>Grades 6, 7, and 8</b>, the <a href="https://sites.google.com/site/regiscollege-edu-region-v-science-fair-teams-edition-backup/">regional science fair</a> will be held on Saturday April 6, 2019.<br/> 
-        Up to 10 projects from 6, 7, and 8th grade may be selected to represent Coolidge Corner School.</p>
-
-<p>If your research involves human subjects and you would like to
-represent the Coolidge Corner School at the regional fair, you will be
-required to have informed consent forms from your subjects. The
-regional fair has strict safety requirements that exclude the use of
-infectious agents, recombinant DNA and hazardous compounds. Additional
-information can be
-found <a href="https://sites.google.com/site/regiscollege-edu-region-v-science-fair-teams-edition-backup/"><b>here</b></a>
-or by talking with your science teacher or asking the science fair
-team at <a href="mailto:devotionsciencefair@gmail.com"><mark>devotionsciencefair</mark>@gmail.com</a>.</p>
-
-      <label><input id="regionalsOptOut" type="checkbox"> If checked, I am in Grade 6, 7, or 8, and I'm 
-     NOT interested or can not attend the regional fair and should not be considered for selection.</label>
-    </div>
+  <div class="form-row mt-3">
+    <div class="col-12">
+      <label for="specialNeeds"><b>Electrical outlet or other special needs</b><br/>
+	Do you need an electrical outlet, or have any other special needs?</label>
+      <input type="text" class="form-control" id="specialNeeds" placeholder="">
     </div>
   </div>
 
+  <div class="form-check mt-3 col-8">
+    <b>Opt-out from judging</b><br/>
+    <label>
+      <input id="judging" type="checkbox" class="form-check-input">
+      If checked, I would rather NOT discuss my project with the scientists
+      judging the posters and NOT be eligible for rank of first, second or third place in my grade.
+    </label>
+  </div>
 
+  <h4 class="mt-5">Regional Science Fair</h4>
+  <p>For <b>Grades 6, 7, and 8</b>, the
+    <a href="https://sites.google.com/site/regiscollege-edu-region-v-science-fair-teams-edition-backup/">regional science fair</a>
+    will be held on Saturday April 6, 2019.<br/> 
+    Up to 10 projects from 6, 7, and 8th grade may be selected to represent Coolidge Corner School.</p>
+      
+  <p class="col-8">If your research involves human subjects and you would like to
+      represent the Coolidge Corner School at the regional fair, you will be
+      required to have informed consent forms from your subjects. The
+      regional fair has strict safety requirements that exclude the use of
+      infectious agents, recombinant DNA and hazardous compounds. Additional
+      information can be
+      found <a href="https://sites.google.com/site/regiscollege-edu-region-v-science-fair-teams-edition-backup/"><b>here</b></a>
+      or by talking with your science teacher or asking the science fair
+      team at <a href="mailto:devotionsciencefair@gmail.com"><mark>devotionsciencefair</mark>@gmail.com</a>.</p>
+  
+  <div class="form-check mt-3 col-8">
+    <b>Opt-out from regional science fair</b><br/>
+    <label>
+      <input id="regionalsOptOut" type="checkbox" class="form-check-input mr-auto">
+      If checked, I am in Grade 6, 7, or 8, and I'm NOT interested or can not attend the
+      regional fair and should NOT be considered for selection.
+    </label>
+  </div>
 
-
-
-
+  <h4 class="mt-5">Volunteers</h4>
+  
   <div class="form-group">
     <label>Parents, if you can help, please check one or both:</label>
     <div class="checkbox col-md-offset-1">
