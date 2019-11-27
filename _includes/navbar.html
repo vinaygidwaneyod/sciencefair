@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="/">
+  <a class="navbar-brand" href="{{ site.baseurl }}">
     <img class="logo" src="assets/pix/devologo.png"></div>
   </a>
   <ul class="navbar-nav">
@@ -9,7 +9,7 @@
     <li class="nav-item {% if page.tab == 'register' %}active{% endif %}">
       <a class="nav-link" href="register">Registration</a></li>
     <li class="nav-item {% if page.tab == 'pto' %}active{% endif %}">
-      <a class="nav-link" href="https://www.brookline.k12.ma.us/domain/331">CCS PTO</a>
+      <a class="nav-link" href="https://www.brookline.k12.ma.us/domain/331" target="pto">CCS PTO</a>
     </li>
   </ul>
 </nav>
