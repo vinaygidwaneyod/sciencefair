@@ -1,8 +1,9 @@
 .register-logo {
-    width: 130px;
-    margin-top: -1em;
-    float: right;
-    margin-right: 5em;
+    transform: scaleX(-1);
+    width: 100%;
+    float: left;
+    position: relative;
+    top: -7em;
 }
 
 .logo {
@@ -11,12 +12,18 @@
   margin-left: 7px;
   width: 32px;
   height: 32px;
-  /* background: url("asset/pix/devologo.png") no-repeat; */
   background-size: contain;
 }
 
 .glyphicon-download-alt {
  margin-right: .5em;
+}
+
+footer {
+    font-size: 80%;
+    color: #999;
+    margin: 1em;
+    a {	color: lighten(blue, 33%); }
 }
 
 .devo-nav.navbar-default {
