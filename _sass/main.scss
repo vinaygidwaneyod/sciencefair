@@ -1,9 +1,20 @@
-.register-logo {
-    transform: scaleX(-1);
-    width: 100%;
-    float: left;
-    position: relative;
-    top: -7em;
+.banner {
+   position: relative;
+   top: 0px;
+   left: 0px;
+   z-index: 1;
+   a { left: 0px;
+        top: 0px;
+        position: relative;
+	z-index: 2;}
+   .register-logo {
+	z-index: 1;
+	transform: scaleX(-1);
+        width: 100%;
+        float: left;
+        position: relative;
+        top: -7em;
+    }
 }
 
 .logo {
