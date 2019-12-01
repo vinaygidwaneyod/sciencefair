@@ -80,15 +80,6 @@ footer {
    font-weight: bold;
 }
 
-.row.schedule {
-  padding-top: 1em;
-  padding-bottom: 1em;
-
-}
-
-.row.schedule:nth-child(odd) {
-    background: #EEE;
-}
 
 #names .form-row:nth-child(odd) input,
 #names .form-row:nth-child(odd) select {
