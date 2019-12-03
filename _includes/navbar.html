@@ -11,5 +11,10 @@
     <li class="nav-item {% if page.tab == 'pto' %}active{% endif %}">
       <a class="nav-link" href="https://www.brookline.k12.ma.us/domain/331" target="pto">CCS PTO</a>
     </li>
+    {% if page.tab == 'judging' %}
+    <li class="nav-item active">
+      <a class="nav-link" href="judge-signup">Judging</a>
+    </li>
+    {% endif %}
   </ul>
 </nav>

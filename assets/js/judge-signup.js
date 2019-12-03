@@ -10,9 +10,9 @@ var GOOGLE_URL = 'https://script.google.com/macros/s/AKfycbzi6XXUKS5sodYk_Gi9113
 
 function on_submit_judge(optIn){
   if (optIn){
-    $('#optin_spinner').show();
+    $('#optin_spinner').removeClass('d-none');
   } else{
-    $('#optout_spinner').show();
+    $('#optout_spinner').removeClass('d-none');
   }
   var email = $('form input#yesEmail').val();
   if (!validateEmail(email)){
@@ -85,7 +85,7 @@ function signup_frame1(){
 
 
 function signup_frame2(result_struct){
-  $('.spinner').hide();
+  $('.spinner').addClass('d-none');
   var result = result_struct.result;
   var optOut = result_struct.optOut;
   $('.judging .frame1').hide(200);
