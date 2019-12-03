@@ -2,3 +2,5 @@
 old/
 _site/
 .gitignore
+.jekyll-cache
+
