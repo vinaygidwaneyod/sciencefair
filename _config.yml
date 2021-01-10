@@ -1,2 +1,7 @@
+exclude:
+    - docs
+    - stats.html
+    - readme.md
+    - redirect.html
 sass:
     sass_dir: _sass
