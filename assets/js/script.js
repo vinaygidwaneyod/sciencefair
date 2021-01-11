@@ -1,10 +1,10 @@
-$(document).ready(init_devo);
+$(document).ready(initialize);
 
 // Edit this URL to point to the script
 
-var GOOGLE_URL= 'https://script.google.com/macros/s/AKfycbyCQCcpJjUZ5RlkoCWfAf69C3OEGTiWJ3k58lnVUee-9wPFkUV8/exec';
+var GOOGLE_URL= 'https://script.google.com/macros/s/AKfycbyZUdJtGIUPaqXtj0NotcFkVYyu-SoAPsIaEgQCC3-gMQvCPH3B2lkA/exec';
 
-function init_devo(){
+function initialize(){
   TableFactory.install();
   $('button#form_submit').click(on_submit);
   $('button#addChild').click(on_addChild);
@@ -14,17 +14,32 @@ function init_devo(){
 // ----------------------------------------
 // Click on submit button, post to Google Docs spreadsheet
 
-function on_submit(e){
+function on_submit(e) {
+  e.preventDefault();
+
   var data = get_values();
-  data['prefix']='callback';
-  console.log(data);
-  $.ajax({url: GOOGLE_URL,
+  data.prefix = 'callback';
+
+  post(data);
+
+  /* $.ajax({
+    url: GOOGLE_URL,
 	  data: data,
 	  jsonp: 'callback',
 	  dataType: 'jsonp',
 	  success: callback
 	 });
-  return false;    // e.preventDefault
+  return false;    // e.preventDefault */
+}
+
+async function post(data) {
+  console.log('post', data);
+  const response = await fetch(GOOGLE_URL, {
+    method: 'POST',
+    body: JSON.stringify(data)
+  });
+  console.log(response.status);
+  console.log(await response.text());
 }
 
 function callback(result){
@@ -172,8 +187,17 @@ var TableFactory = {
 
   grades : ['K', 1, 2, 3, 4, 5, 6, 7, 8, 'other'],
 
-  schools : ['Coolidge Corner', 'Baker', 'Driscoll',
-	     'Heath', 'Pierce', 'Lawrence', 'Lincoln', 'Runkle', 'Other'],
+  schools : [
+    'Ruffin Ridley',
+    'Baker',
+    'Driscoll',
+    'Heath',
+    'Lawrence',
+    'Lincoln',
+    'Pierce',
+    'Runkle',
+    'Other'
+  ],
 
   make_select : function(col_class, for_id, label, options){
     var select = $('<select/>', {'class': 'form-control',
