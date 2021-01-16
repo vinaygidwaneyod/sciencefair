@@ -1,0 +1,25 @@
+{
+  "name": "sciencefair",
+  "version": "1.0.0",
+  "description": "View this site at [http://sciencefair.devotionschool.org](http://sciencefair.devotionschool.org)",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CoolidgeCornerSchool/sciencefair.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CoolidgeCornerSchool/sciencefair/issues"
+  },
+  "homepage": "https://github.com/CoolidgeCornerSchool/sciencefair#readme",
+  "dependencies": {
+    "bootstrap": "^4.5.3"
+  }
+}
