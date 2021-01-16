@@ -42,12 +42,11 @@
 }
 
 .logo {
-  border: none;
-  margin-top: 9px;
-  margin-left: 7px;
-  width: 32px;
-  height: 32px;
-  background-size: contain;
+  background: white;
+  border-radius: 100%;
+  width: 48px;
+  height: 48px;
+  padding: 4px;
 }
 
 .glyphicon-download-alt {
@@ -162,6 +161,41 @@ footer {
 
 .navbar {
   background-color: #07084d;
+}
+
+.registration-form {
+  label {
+    margin-bottom: 0;
+    font-weight: 700;
+  }
+
+  [id$="-helper-text"] {
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+  }
+}
+
+.navbar {
+  margin-bottom: 3rem;
+}
+
+.nav-link {
+  color: #ffffff;
+  // text-decoration: underline;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+footer {
+  color: #767676;
+
+  a {
+    color: #767676;
+    text-decoration: underline;
+  }
 }
 
 @media (min-width: 768px) {

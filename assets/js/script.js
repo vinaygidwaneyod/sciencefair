@@ -38,8 +38,13 @@ async function post(data) {
     method: 'POST',
     body: JSON.stringify(data)
   });
-  console.log(response.status);
-  console.log(await response.text());
+
+  if (response.ok) {
+    console.log(await response.text());
+    window.location.href = 'thanks.html?r='; // + encoded;
+  } else {
+    console.log('error', response);
+  }
 }
 
 function callback(result){
@@ -156,9 +161,9 @@ var TableFactory = {
     return  $('<div/>', {'class': 'row form-inline'}).append(
       $('<div/>', {'class':'btn-group updown col-4'}).append(
 	  $('<button/>', {'type': 'button', 'class':'btn btn-xs', 'aria-label':"Add child", 'id':'addChild'})
-	  .append($('<span/>', {'class':''}).text('+')),
+	  .append($('<span/>', {'class':''}).text('Add')),
 	  $('<button/>', {'type': 'button', 'class':'btn btn-xs', 'aria-label':"Remove child", 'id':'removeChild'})
-	  .append($('<span/>', {'class':''}).html('&ndash;')))
+	  .append($('<span/>', {'class':''}).html('Remove')))
     );
   },
 
@@ -185,7 +190,7 @@ var TableFactory = {
 	  );
   },
 
-  grades : ['K', 1, 2, 3, 4, 5, 6, 7, 8, 'other'],
+  grades : ['', 'K', 1, 2, 3, 4, 5, 6, 7, 8, 'other'],
 
   schools : [
     'Ruffin Ridley',

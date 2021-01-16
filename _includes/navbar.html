@@ -1,15 +1,12 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg">
   <a class="navbar-brand" href="/">
-    <img class="logo" src="assets/pix/devologo.png"></div>
+    <img class="logo" src="assets/pix/bee-mask-color.png" alt="Science Fair Home"></div>
   </a>
   <ul class="navbar-nav">
-    <li class="nav-item {% if page.tab == 'home' %}active{% endif %}">
-      <a class="nav-link" href="/">Science Fair Home</a>
-    </li>
     <li class="nav-item {% if page.tab == 'register' %}active{% endif %}">
       <a class="nav-link" href="/register">Registration</a></li>
     <li class="nav-item {% if page.tab == 'pto' %}active{% endif %}">
-      <a class="nav-link" href="https://ruffinridleypto.org/">Ruffin Ridley PTO</a>
+      <a class="nav-link" href="https://ruffinridleypto.org/">Ruffin Ridley PTO <i class="fa fa-external-link" aria-hidden="true"></i></a>
     </li>
     {% if page.tab == 'judging' %}
     <li class="nav-item active">

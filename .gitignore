@@ -3,4 +3,4 @@ old/
 _site/
 .gitignore
 .jekyll-cache
-
+node_modules/
