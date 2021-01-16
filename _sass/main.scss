@@ -1,42 +1,44 @@
 .parallax {
-    min-height: 24em;
-    position: relative;
-    background-color: rgba(255,255,255, 0);
-    .background {
-	position: absolute;
-        top: 0;
-        left: 0;
-	bottom: 0;
-        right: 0;
-	content: "";
-        display: block;
-        z-index: -1;
-	width: 100%;
-        height: 100%;
-        background-repeat: no-repeat;   
-        background-size: cover; 
-	background-image: url("../pix/Wright_Bros_First_Flight.png");
-        opacity: 0.3;
-    }
+  min-height: 24em;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0);
+  .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    content: "";
+    display: block;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("../pix/Wright_Bros_First_Flight.png");
+    opacity: 0.3;
+  }
 }
 
 .banner {
-   position: relative;
-   top: 0px;
-   left: 0px;
-   z-index: 1;
-   a { left: 0px;
-        top: 0px;
-        position: relative;
-	z-index: 2;}
-   .register-logo {
-	z-index: 1;
-	transform: scaleX(-1);
-        width: 100%;
-        float: left;
-        position: relative;
-        top: -7em;
-    }
+  position: relative;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+  a {
+    left: 0px;
+    top: 0px;
+    position: relative;
+    z-index: 2;
+  }
+  .register-logo {
+    z-index: 1;
+    transform: scaleX(-1);
+    width: 100%;
+    float: left;
+    position: relative;
+    top: -7em;
+  }
 }
 
 .logo {
@@ -49,14 +51,16 @@
 }
 
 .glyphicon-download-alt {
- margin-right: .5em;
+  margin-right: 0.5em;
 }
 
 footer {
-    font-size: 80%;
-    color: #999;
-    margin: 2em 0em;
-    a {	color: lighten(blue, 33%); }
+  font-size: 80%;
+  color: #999;
+  margin: 2em 0em;
+  a {
+    color: lighten(blue, 33%);
+  }
 }
 
 .devo-nav.navbar-default {
@@ -77,20 +81,19 @@ footer {
 }
 
 .names_header p {
-   font-weight: bold;
+  font-weight: bold;
 }
-
 
 #names .form-row:nth-child(odd) input,
 #names .form-row:nth-child(odd) select {
-    background: #F6F6F6;
+  background: #f6f6f6;
 }
 
 .updown button {
   font-size: 80%;
   width: 2.5em;
   height: 2.5em;
-  border:  1px solid #ced4da;
+  border: 1px solid #ced4da;
 }
 
 #reg_status {
@@ -115,7 +118,7 @@ footer {
 /* judging signup form */
 
 .judging .frame2 {
-  display: none
+  display: none;
 }
 
 .judging .frame2 button.ok {
@@ -123,11 +126,11 @@ footer {
 }
 
 .has-error label {
-    color: #a94442;
+  color: #a94442;
 }
 
 .spinner {
-    color: #777;
+  color: #777;
 }
 
 .banner-container {
@@ -135,7 +138,8 @@ footer {
 }
 
 .banner-hero-image {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../pix/earth.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url("../pix/earth.jpg");
   background-size: cover;
   padding: 2rem;
 }
@@ -160,15 +164,12 @@ footer {
   background-color: #07084d;
 }
 
-
-
-
-@media (min-width:768px) {
+@media (min-width: 768px) {
   .banner-text {
     width: 50%;
   }
- }
+}
 
- .banner-subtitle {
-   font-size: 1.5rem;
- }
+.banner-subtitle {
+  font-size: 1.5rem;
+}
