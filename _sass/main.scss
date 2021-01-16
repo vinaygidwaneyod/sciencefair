@@ -198,9 +198,37 @@ footer {
   }
 }
 
+.participating-students {
+  margin-top: 1rem;
+  padding: 1rem 1rem 1rem calc(1rem + 15px);
+  border-left: 1px solid #666;
+  background: #f3f3f3;
+
+  fieldset {
+    margin-top: 1rem;
+  }
+
+  legend {
+    margin: 0 0 0 5px;
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+}
+
+.form-control {
+  border-color: #767676;
+}
+
+
 @media (min-width: 768px) {
   .banner-text {
     width: 50%;
+  }
+}
+
+@media (max-width: 992px) {
+  .participating-students [class*="col-"] {
+    min-width: 100%;
   }
 }
 

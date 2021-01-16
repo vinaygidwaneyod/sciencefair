@@ -9,14 +9,14 @@ layout: default
   <form class="registration-form">
     <div class="form-row mt-3" id="project_title">
       <div class="col-12">
-        <label for="project-title">Project title (optional)</label>
-        <div id="project-title-helper-text">
+        <label for="projectTitle">Project title (optional)</label>
+        <div id="projectTitle-helper-text">
           What will your project be called? It's ok to change this later!
         </div>
         <input
-          aria-describedby="project-title-helper-text"
+          aria-describedby="projectTitle-helper-text"
           class="form-control"
-          id="project-title"
+          id="projectTitle"
           type="text"
         />
       </div>
@@ -24,25 +24,25 @@ layout: default
 
     <div class="form-row mt-3">
       <div class="col-12">
-        <label for="special-needs">
-          <i class="fa fa-plug text-secondary mr-2"></i>
+        <label for="specialNeeds">
+          <i class="fa fa-plug mr-2"></i>
           <span>Electrical outlet or other special needs</span>
         </label>
-        <div id="special-needs-helper-text">
+        <div id="specialNeeds-helper-text">
           Do you need an electrical outlet, or have any other special needs?
         </div>
         <textarea
-          aria-describedby="special-needs-helper-text"
+          aria-describedby="specialNeeds-helper-text"
           class="form-control"
-          id="special-needs"
+          id="specialNeeds"
           rows="3"
         ></textarea>
       </div>
     </div>
 
-    <div class="form-check mt-3 col-8">
+    <div class="form-check mt-3">
       <input
-        aria-describedby="special-needs-helper-text"
+        aria-describedby="judging-helper-text"
         class="form-check-input"
         id="judging"
         type="checkbox"
@@ -57,7 +57,7 @@ layout: default
     </div>
 
     <h2 class="mt-5">Regional Science Fair</h2>
-    <p>
+    <p class="">
       The
       <a
         href="https://sites.google.com/site/regiscollege-edu-region-v-science-fair-teams-edition-backup/"
@@ -68,7 +68,7 @@ layout: default
       represent Florida Ruffin Ridley School.
     </p>
 
-    <p class="col-8">
+    <p class="">
       If your research involves human subjects and you would like to represent
       the Florida Ruffin Ridley School at the regional fair, you will be
       required to have informed consent forms from your subjects. The regional
@@ -82,16 +82,16 @@ layout: default
       <a href="mailto:ChrisDulla@gmail.com">Chris Dulla</a>.
     </p>
 
-    <div class="form-check mt-3 col-8">
+    <div class="form-check mt-3">
       <input
-        aria-describedby="regionals-opt-out-helper-text"
+        aria-describedby="regionalsOptOut-helper-text"
         class="form-check-input"
-        id="regionals-opt-out"
+        id="regionalsOptOut"
         type="checkbox"
       />
-      <label for="regionals-opt-out">Opt out from regional science fair</label>
+      <label for="regionalsOptOut">Opt out from regional science fair</label>
 
-      <div id="regionals-opt-out-helper-text">
+      <div id="regionalsOptOut-helper-text">
         Check this if you are in grade 6, 7, or 8 and are NOT interested or can
         not attend the regional fair and should NOT be considered for selection.
       </div>
@@ -99,52 +99,52 @@ layout: default
 
     <h2 class="mt-5">Parent and Caregiver Volunteers</h2>
 
+    Parents and caregivers, if you can help, please fill out the following:
+
     <div class="form-group">
-      <div class="form-check mt-3 col-8">
+      <div class="form-group mt-3">
+        <label for="parentName">Name</label>
+        <input
+          autocomplete="name"
+          class="form-control"
+          id="parentName"
+          type="text"
+        />
+      </div>
+      <div class="form-group">
+        <label for="parentPhone">Phone number</label>
+        <input
+          autocomplete="tel"
+          class="form-control"
+          id="parentPhone"
+          type="tel"
+        />
+      </div>
+      <div class="form-group">
+        <label for="parentEmail">Email address</label>
+        <input
+          autocomplete="email"
+          class="form-control"
+          id="parentEmail"
+          type="email"
+        />
+      </div>
+      <div class="form-check mt-3">
         <input
           class="form-check-input"
-          id="volunteer-general"
+          id="generalHelper"
           type="checkbox"
         />
-        <label for="volunteer-general"
+        <label for="generalHelper"
           >Volunteer for general help before the fair (as needed)</label
         >
       </div>
 
-      <div class="form-check mt-3 col-8">
-        <input class="form-check-input" id="volunteer-day-of" type="checkbox" />
-        <label for="volunteer-day-of"
+      <div class="form-check mt-3">
+        <input class="form-check-input" id="helperOnFairDay" type="checkbox" />
+        <label for="helperOnFairDay"
           >Volunteer to help on the day of the fair</label
         >
-      </div>
-      <div class="row">
-        <div class="form-group col-md-4 col-md-offset-1">
-          <label for="parentName">Name</label>
-          <input
-            type="text"
-            class="form-control"
-            id="parentName"
-            placeholder="name"
-          />
-        </div>
-        <div class="form-group col-md-3">
-          <label for="parentPhone">phone</label>
-          <input
-            type="text"
-            class="form-control"
-            id="parentPhone"
-            placeholder="phone"
-          />
-        </div>
-        <div class="form-group col-md-3">
-          <label for="parentEmail">email</label>
-          <input
-            type="text"
-            class="form-control"
-            id="parentEmail"
-            placeholder="email"
-          />
-        </div>
       </div>
     </div>
 
@@ -153,3 +153,5 @@ layout: default
     </button>
   </form>
 </main>
+
+<footer></footer>

@@ -18,6 +18,8 @@ function initialize() {
 function on_submit(e) {
   e.preventDefault();
 
+  $("button#form_submit").prop("disabled", true);
+
   var data = get_values();
   data.prefix = "callback";
 
@@ -42,9 +44,11 @@ async function post(data) {
 
   if (response.ok) {
     console.log(await response.text());
-    window.location.href = "thanks.html?r="; // + encoded;
+
+    window.location.href = "thanks.html";
   } else {
     console.log("error", response);
+    window.location.href = "registration-error.html";
   }
 }
 
@@ -55,7 +59,7 @@ function callback(result) {
 }
 
 function get_fields() {
-  return $.map($("form input, form select"), function (x, i) {
+  return $.map($("form input, form select, form textarea"), function (x, i) {
     return $(x).attr("id");
   });
 }
@@ -129,7 +133,7 @@ var TableFactory = {
   // returns a complete table of form inputs with one child per row
   // columns are [name, class, phone, email]
   make_table: function () {
-    var result = $("<div/>", { class: "form_group", id: "names" }).append(
+    var result = $("<div/>", { class: "form_group participating-students", id: "names" }).append(
       this.make_header(),
       this.make_row(1).show(),
       this.make_row(2),
@@ -141,65 +145,88 @@ var TableFactory = {
   },
 
   make_one_header: function (col_class, name) {
-    return $("<div/>", { class: col_class }).append($("<b>").text(name));
+    return $("<h2/>", { class: col_class }).append($("<b>").text(name));
   },
 
   make_header: function () {
     return $("<div/>", { class: "mt-3 row names_header" }).append(
-      this.make_one_header("col-4", "Participating students"),
-      this.make_one_header("col-1", "grade"),
-      this.make_one_header("col-2", "phone"),
-      this.make_one_header("col-3", "email (parent or child)"),
-      this.make_one_header("col-2", "school")
+      this.make_one_header("", "Participating students"),
+      // this.make_one_header("col-1", "grade"),
+      // this.make_one_header("col-2", "phone"),
+      // this.make_one_header("col-3", "email (parent or child)"),
+      // this.make_one_header("col-2", "school")
     );
   },
 
   // plus and minus buttons
   make_updown_buttons: function () {
-    return $("<div/>", { class: "row form-inline" }).append(
+    return $("<div/>", { class: "row form-inline mt-3" }).append(
       $("<div/>", { class: "btn-group updown col-4" }).append(
         $("<button/>", {
           type: "button",
-          class: "btn btn-xs",
-          "aria-label": "Add child",
+          class: "btn btn-xs btn-dark",
           id: "addChild",
-        }).append($("<span/>", { class: "" }).text("Add")),
+        }).append($("<span/>", { class: "" }).text("Add student")),
         $("<button/>", {
           type: "button",
-          class: "btn btn-xs",
-          "aria-label": "Remove child",
+          class: "btn btn-xs btn-danger",
           id: "removeChild",
-        }).append($("<span/>", { class: "" }).html("Remove"))
+        }).append($("<span/>", { class: "" }).html("Remove student"))
       )
     );
   },
 
   make_row: function (N) {
-    return $("<div/>", { class: "form-row child" })
+    return $("<fieldset/>", { class: "form-row child" })
       .hide()
       .append(
+        $(`<legend>Student ${N}</legend>`, {
+          class: "participating-student-legend"
+        }),
         this.make_input(
           "col-4",
           "name" + N,
-          "name" + N,
+          "Name",
           "text",
-          "Student " + N + "'s first and last name"
+          "Student " + N + "'s first and last name",
+          "name"
         ),
-        this.make_select("col-1", "grade" + N, "grade" + N, this.grades),
-        this.make_input("col-2", "phone" + N, "phone" + N, "tel", "phone"),
-        this.make_input("col-3", "email" + N, "email" + N, "email", "email"),
-        this.make_select("col-2", "school" + N, "school" + N, this.schools)
+        this.make_select("col-1", "grade" + N, "Grade", this.grades),
+        this.make_select("col-2", "school" + N, "School", this.schools),
+        this.make_input(
+          "col-2",
+          "phone" + N,
+          "Phone",
+          "tel",
+          "phone",
+          "tel"
+        ),
+        this.make_input(
+          "col-3",
+          "email" + N,
+          "Email",
+          "email",
+          "email",
+          "email"
+        ),
       );
   },
 
-  make_input: function (col_class, for_id, label, type, placeholder) {
+  make_input: function (
+    col_class,
+    for_id,
+    label,
+    type,
+    placeholder,
+    autocomplete
+  ) {
     return $("<div/>", { class: col_class }).append(
-      //$('<label/>', {'class': 'sr-only', 'for': for_id}).text(label),
+      $("<label/>", { for: for_id }).text(label),
       $("<input/>", {
         class: "form-control",
         type: type,
         id: for_id,
-        placeholder: placeholder,
+        autocomplete: autocomplete,
       })
     );
   },
@@ -224,7 +251,7 @@ var TableFactory = {
       select.append($("<option/>", { value: v }).text(v));
     });
     return $("<div/>", { class: "form_group " + col_class }).append(
-      $("<label/>", { class: "sr-only", for: for_id }).text(label),
+      $("<label/>", { for: for_id }).text(label),
       select
     );
   },
