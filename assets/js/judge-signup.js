@@ -1,72 +1,83 @@
 $(document).ready(init_judge);
 
-function init_judge(){
-  $('button#form_submit_yes').click(function(){return on_submit_judge(true);});
-  $('button#form_submit_no').click(function(){return on_submit_judge(false);});
-  $('.frame2 .btn.ok').click(signup_frame1);
+function init_judge() {
+  $("button#form_submit_yes").click(function () {
+    return on_submit_judge(true);
+  });
+  $("button#form_submit_no").click(function () {
+    return on_submit_judge(false);
+  });
+  $(".frame2 .btn.ok").click(signup_frame1);
 }
 
-var GOOGLE_URL = 'https://script.google.com/macros/s/AKfycbzi6XXUKS5sodYk_Gi9113-epceiLLh_C4GN6fas2n4JWGQE_I/exec';
+var GOOGLE_URL =
+  "https://script.google.com/macros/s/AKfycbzi6XXUKS5sodYk_Gi9113-epceiLLh_C4GN6fas2n4JWGQE_I/exec";
 
-function on_submit_judge(optIn){
-  if (optIn){
-    $('#optin_spinner').removeClass('d-none');
-  } else{
-    $('#optout_spinner').removeClass('d-none');
+function on_submit_judge(optIn) {
+  if (optIn) {
+    $("#optin_spinner").removeClass("d-none");
+  } else {
+    $("#optout_spinner").removeClass("d-none");
   }
-  var email = $('form input#yesEmail').val();
-  if (!validateEmail(email)){
-    if (email == "" || email == undefined){
+  var email = $("form input#yesEmail").val();
+  if (!validateEmail(email)) {
+    if (email == "" || email == undefined) {
       errMsg = "Missing email address.";
     } else {
-      errMsg = '"' + email + '" doesn\'t seem to be a valid email address.';
+      errMsg = '"' + email + "\" doesn't seem to be a valid email address.";
     }
-    $('#emailGroup').addClass('has-error');
-    callback_judge({result: errMsg});
+    $("#emailGroup").addClass("has-error");
+    callback_judge({ result: errMsg });
     return false;
   } else {
     var data = get_values_judge(optIn);
-    $.ajax({url: GOOGLE_URL,
-	    data: data,
-	    jsonpCallback: 'callback_judge',
-	    dataType: 'jsonp'
-	   }).done(callback_judge)
-             .fail(function(){signup_frame2({result:"Could not post data to server."});});
-    return false;    // e.preventDefault
+    $.ajax({
+      url: GOOGLE_URL,
+      data: data,
+      jsonpCallback: "callback_judge",
+      dataType: "jsonp",
+    })
+      .done(callback_judge)
+      .fail(function () {
+        signup_frame2({ result: "Could not post data to server." });
+      });
+    return false; // e.preventDefault
   }
 }
 
-function callback_judge(result){
-  console.log('callback result', result);
+function callback_judge(result) {
+  console.log("callback result", result);
   signup_frame2(result);
   return false;
 }
 
-function get_fields_judge(){
-  return $.map($('form input, form select'), function(x, i){ return $(x).attr('id'); });
+function get_fields_judge() {
+  return $.map($("form input, form select"), function (x, i) {
+    return $(x).attr("id");
+  });
 }
 
-function get_values_judge(optIn){
+function get_values_judge(optIn) {
   var fields = get_fields_judge();
   var data = {};
-  for (var i in fields){
+  for (var i in fields) {
     var is_checkbox = false;
     var key = fields[i];
     var selector = key;
-    if ($('#'+key).attr('type') == 'checkbox'){
-      selector = key+':checked';
+    if ($("#" + key).attr("type") == "checkbox") {
+      selector = key + ":checked";
       is_checkbox = true;
     }
-    var value = $('form #'+selector).val();
-    if (!$('form #'+selector).is(':visible')){
-      value = '';
+    var value = $("form #" + selector).val();
+    if (!$("form #" + selector).is(":visible")) {
+      value = "";
     }
-    if (is_checkbox && value == 'on'){
-      value = 'yes';
+    if (is_checkbox && value == "on") {
+      value = "yes";
     }
-    if (value != '' && value != undefined){
-      if (key == 'yesEmail' && !optIn){
-	key = 'noEmail'; // User clicked 'unsubscribe me'
+    if (value != "" && value != undefined) {
+      if (key == "yesEmail" && !optIn) {
+        key = "noEmail"; // User clicked 'unsubscribe me'
       }
       data[key] = value;
     }
@@ -76,35 +87,34 @@ function get_values_judge(optIn){
 
 //----------------------------
 
-function signup_frame1(){
-  $('#emailGroup').removeClass('has-error');
-  $('.judging .frame1').show(200);
-  $('.judging .frame2').hide(200);
+function signup_frame1() {
+  $("#emailGroup").removeClass("has-error");
+  $(".judging .frame1").show(200);
+  $(".judging .frame2").hide(200);
   return false;
 }
 
-
-function signup_frame2(result_struct){
-  $('.spinner').addClass('d-none');
+function signup_frame2(result_struct) {
+  $(".spinner").addClass("d-none");
   var result = result_struct.result;
   var optOut = result_struct.optOut;
-  $('.judging .frame1').hide(200);
-  if (result == 'success'){
-    if (optOut == undefined){
-      $('.judging .frame2 .success').show();
-      $('.judging .frame2 .remove').hide();
+  $(".judging .frame1").hide(200);
+  if (result == "success") {
+    if (optOut == undefined) {
+      $(".judging .frame2 .success").show();
+      $(".judging .frame2 .remove").hide();
     } else {
-      $('.judging .frame2 .success').hide();
-      $('.judging .frame2 .remove').show();
+      $(".judging .frame2 .success").hide();
+      $(".judging .frame2 .remove").show();
     }
-    $('.judging .frame2 .fail').hide();
+    $(".judging .frame2 .fail").hide();
   } else {
-    $('.judging .frame2 .fail').show();
-    $('.judging .frame2 .fail .reason').html(result);
-    $('.judging .frame2 .success').hide();
-    $('.judging .frame2 .remove').hide();
+    $(".judging .frame2 .fail").show();
+    $(".judging .frame2 .fail .reason").html(result);
+    $(".judging .frame2 .success").hide();
+    $(".judging .frame2 .remove").hide();
   }
-  $('.judging .frame2').show(200);
+  $(".judging .frame2").show(200);
   return false;
 }
 
