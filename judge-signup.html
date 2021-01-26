@@ -5,85 +5,127 @@ layout: default
 
 <script src="assets/js/judge-signup.js"></script>
 
-<title>Coolidge Corner Science Fair 2019 - judges signup</title>
-
+<title>Ruffin Ridley Science Fair 2019 - judges signup</title>
 
 <h2>Sign up for Science Fair judging</h2>
 
-<form>
+<p>I'm interested in being a judge for the Ruffin Ridley Science Fair on Saturday, May 8, 2021.</p>
 
-  <label class="mt-3" for="name">I'm interested in being a judge for the
-    Coolidge Corner Science Fair on Saturday, February 2, 2019.</label>
-  <div class="form-row">
-    <div class="col-8">
-      <input type="text" class="form-control" id="name" placeholder="Name">
+<form class="registration-form">
+  <div class="form-row mt-3">
+    <div class="col-12">
+      <label for="name">Name</label>
+      <input
+        autocomplete="name"
+        class="form-control"
+        id="name"
+        type="text"
+      />
     </div>
-    <div class="col-4">
-      <input type="email" class="form-control" id="yesEmail" placeholder="Email">
+  </div>
+  <div class="form-row mt-3">
+    <div class="col-12">
+      <label for="yesEmail">Email</label>
+      <input
+        autocomplete="email"
+        class="form-control"
+        id="yesEmail"
+        type="email"
+      />
+    </div>
+  </div>
+  <div class="form-row mt-3">
+    <div class="col-12">
+      <label for="expertise">Expertise</label>
+      <div id="expertise-helper-text">
+        Degree and area of expertise
+      </div>
+      <input
+        aria-describedby="expertise-helper-text"
+        class="form-control"
+        id="expertise"
+        type="text"
+      />
     </div>
   </div>
   
-  <label class="mt-3" for="expertise">Expertise</label>
-  <div class="form-row">
-      <div class="col-8">
-	<input type="text" class="form-control" id="expertise" placeholder="Degree and area of expertise">
-      </div>
+  <div class="form-check mt-3">
+    <input
+      aria-describedby="haveRuffinRidleyKids-helper-text"
+      class="form-check-input"
+      id="haveRuffinRidleyKids"
+      type="checkbox"
+    />
+    <label for="haveRuffinRidleyKids">Are you the parent of any children currently attending Ruffin Ridley School?</label>
+
+    <div id="haveRuffinRidleyKids-helper-text">
+      
+    </div>
+  </div>
+  <div class="form-row mt-3">
+    <div class="col-12">
+      <label for="kidsAndGrades">If yes, what grades are they in?</label>
+      <input
+        autocomplete="text"
+        class="form-control"
+        id="kidsAndGrades"
+        type="text"
+      />
+    </div>
   </div>
 
-    <div class="form-row">
-      <div class="col-6">
-	<div class="form-check mt-3">
-	  <input class="form-check-input" type="checkbox" id="haveDevoKids"></input>
-	  <label class="form-check-label" for="haveDevoKids">Are you the parent of any children currently attending Coolidge Corner School?</label>
-	</div>
-      </div>
+  <div class="form-check mt-3">
+    <input
+      aria-describedby="nonRuffinRidleyKids-helper-text"
+      class="form-check-input"
+      id="nonRuffinRidleyKids"
+      type="checkbox"
+    />
+    <label for="nonRuffinRidleyKids">Are you the parent of any children attending another Brookline K-8 school who are participating in the Ruffin Ridley Science Fair?</label>
 
-      <div class="col-6">
-	<label class="mt-3" for="kidsAndGrades">If yes, what grades are they in?</label>
-	<input type="text" class="form-control" id="kidsAndGrades" placeholder="My kids' grades">
+    <div id="nonRuffinRidleyKids-helper-text">
+      
+    </div>
+  </div>
+
+  <div class="form-check mt-3 mb-3">
+    <input
+      class="form-check-input"
+      id="pastJudge"
+      type="checkbox"
+    />
+    <label for="pastJudge">Have you been a Ruffin Ridley Science Fair judge in the past?</label>
+  </div>
+
+  <div class="container judging">
+    <div class="frame1">
+      <button id="form_submit_judge" type="submit" class="btn btn-primary">
+        Sign up
+      </button>
+    </div>
+
+    <div class="frame2">
+      <div class="success alert alert-success">
+        <span class="fa fa-check"></span>
+        <p>Thanks for signing up!</p>
+        <button class="ok btn btn-success" role="button">OK</button>
+      </div>
+      <div class="remove alert alert-success">
+        <span class="fa fa-check"></span>
+        <p>
+          OK, we will remove you from our mailing list. Sorry for any
+          inconvenience.
+        </p>
+        <button class="ok btn btn-success" role="button">OK</button>
+      </div>
+      <div class="fail alert alert-warning">
+        <span class="fa fa-times"></span>
+        <p>
+          Oops, there was a problem. The reason is: <span class="reason"></span>
+        </p>
+        <button class="ok btn btn-warning" role="button">OK</button>
       </div>
     </div>
-    
-    <div class="form-check col-12 mt-3">
-      <input class="form-check-input" type="checkbox" id="nonDevoKids"></input>
-      <label class="form-check-label" for="nonDevoKids">Are you the parent of any children attending another Brookline K-8 school who are participating in the Coolidge Corner Science Fair?</label>
-    </div>
-
-    <div class="form-check col-12 mt-3 mb-5">
-      <input class="form-check-input" type="checkbox" id="pastJudge"></input>
-      <label class="form-check-label" for="pastJudge">Have you been a Coolidge Corner Science Fair judge in the past?</label>
-    </div>
-
-
-    <div class="container judging">
-      <div class="frame1">
-	<button id="form_submit_yes" type="submit" class="btn btn-primary">Yes, I'm interested</button>
-	<i id="optin_spinner" class="fa fa-gear fa-spin fa-2x spinner d-none"></i>
-	<p style="margin-top: 4em">If you're not interested, and you wish to be removed from our mailing list, click here. Don't forget to give us your email address (above)!</P>
-	<button id="form_submit_no" type="submit" class="btn btn-warning">No, please remove me</button>
-	<i id="optout_spinner" class="fa fa-gear fa-spin fa-2x spinner d-none"></i>
-      </div>
-
-      <div class="frame2">
-	<div class="success alert alert-success">
-	  <span class="fa fa-check"></span>
-	  <P>Thanks for signing up!</P>
-	  <button class="ok btn btn-success" role="button">OK</button>
-	</div>
-	<div class="remove alert alert-success">
-	  <span class="fa fa-check"></span>
-	  <P>OK, we will remove you from our mailing list. Sorry for any inconvenience.</P>
-	  <button class="ok btn btn-success" role="button">OK</button>
-	</div>
-	<div class="fail alert alert-warning">
-	  <span class="fa fa-times"></span>
-	  <P>Oops, there was a problem. The reason is: <div class="reason"></div></P>
-	  <button class="ok btn btn-warning" role="button">OK</button>
-	</div>
-      </div>
-
-      </div>
-
-  </form>
-
-</div>
+  </div>
+</form>
+<script src="assets/js/judge-signup.js"></script>
