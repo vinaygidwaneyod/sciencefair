@@ -36,24 +36,24 @@ function on_submit(e) {
 }
 
 async function post(data) {
-  console.log("post", data);
+  // console.log("post", data);
   const response = await fetch(GOOGLE_URL, {
     method: "POST",
     body: JSON.stringify(data),
   });
 
   if (response.ok) {
-    console.log(await response.text());
+    // console.log(await response.text());
 
     window.location.href = "thanks.html";
   } else {
-    console.log("error", response);
+    // console.log("error", response);
     window.location.href = "registration-error.html";
   }
 }
 
 function callback(result) {
-  console.log("call success", result);
+  // console.log("call success", result);
   var encoded = encodeURIComponent(JSON.stringify(result));
   window.location.href = "thanks.html?r=" + encoded;
 }

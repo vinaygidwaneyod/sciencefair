@@ -1,7 +1,7 @@
 $(document).ready(init_judge);
 
 function init_judge() {
-  console.log('init judge')
+  // console.log('init judge')
   $("button#form_submit_judge").unbind('click').click(on_submit_judge);
   $(".frame2 .btn.ok").click(signup_frame1);
 }
@@ -9,7 +9,7 @@ function init_judge() {
 var GOOGLE_URL =
   "https://script.google.com/macros/s/AKfycbwsGUKr05MjUui7RJq3tkS_GORrr1VD2eESW7hO5PwUE86sWmi_3y8C/exec";
 function on_submit_judge(e) {
-  console.log('submit');
+  // console.log('submit');
   e.preventDefault();
 
   // $("button#form_submit").prop("disabled", true);
@@ -42,24 +42,24 @@ function on_submit_judge(e) {
 }
 
 async function post(data) {
-  console.log("post", data);
+  // console.log("post", data);
   const response = await fetch(GOOGLE_URL, {
     method: "POST",
     body: JSON.stringify(data),
   });
 
   if (response.ok) {
-    console.log(await response.text());
+    // console.log(await response.text());
     signup_frame2({
       result: 'success'
     })
   } else {
-    console.log('error', response);
+    // console.log('error', response);
   }
 }
 
 function callback_judge(result) {
-  console.log("callback result", result);
+  // console.log("callback result", result);
   signup_frame2(result);
   return false;
 }
