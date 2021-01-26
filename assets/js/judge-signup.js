@@ -1,24 +1,19 @@
 $(document).ready(init_judge);
 
 function init_judge() {
-  $("button#form_submit_yes").click(function () {
-    return on_submit_judge(true);
-  });
-  $("button#form_submit_no").click(function () {
-    return on_submit_judge(false);
-  });
+  console.log('init judge')
+  $("button#form_submit_judge").unbind('click').click(on_submit_judge);
   $(".frame2 .btn.ok").click(signup_frame1);
 }
 
 var GOOGLE_URL =
-  "https://script.google.com/macros/s/AKfycbzi6XXUKS5sodYk_Gi9113-epceiLLh_C4GN6fas2n4JWGQE_I/exec";
+  "https://script.google.com/macros/s/AKfycbwsGUKr05MjUui7RJq3tkS_GORrr1VD2eESW7hO5PwUE86sWmi_3y8C/exec";
+function on_submit_judge(e) {
+  console.log('submit');
+  e.preventDefault();
 
-function on_submit_judge(optIn) {
-  if (optIn) {
-    $("#optin_spinner").removeClass("d-none");
-  } else {
-    $("#optout_spinner").removeClass("d-none");
-  }
+  // $("button#form_submit").prop("disabled", true);
+
   var email = $("form input#yesEmail").val();
   if (!validateEmail(email)) {
     if (email == "" || email == undefined) {
@@ -28,10 +23,12 @@ function on_submit_judge(optIn) {
     }
     $("#emailGroup").addClass("has-error");
     callback_judge({ result: errMsg });
-    return false;
   } else {
-    var data = get_values_judge(optIn);
-    $.ajax({
+    var data = get_values_judge();
+
+    post(data);
+    
+    /* $.ajax({
       url: GOOGLE_URL,
       data: data,
       jsonpCallback: "callback_judge",
@@ -40,8 +37,24 @@ function on_submit_judge(optIn) {
       .done(callback_judge)
       .fail(function () {
         signup_frame2({ result: "Could not post data to server." });
-      });
-    return false; // e.preventDefault
+      }); */
+  }
+}
+
+async function post(data) {
+  console.log("post", data);
+  const response = await fetch(GOOGLE_URL, {
+    method: "POST",
+    body: JSON.stringify(data),
+  });
+
+  if (response.ok) {
+    console.log(await response.text());
+    signup_frame2({
+      result: 'success'
+    })
+  } else {
+    console.log('error', response);
   }
 }
 
@@ -57,7 +70,7 @@ function get_fields_judge() {
   });
 }
 
-function get_values_judge(optIn) {
+function get_values_judge() {
   var fields = get_fields_judge();
   var data = {};
   for (var i in fields) {
@@ -76,9 +89,6 @@ function get_values_judge(optIn) {
       value = "yes";
     }
     if (value != "" && value != undefined) {
-      if (key == "yesEmail" && !optIn) {
-        key = "noEmail"; // User clicked 'unsubscribe me'
-      }
       data[key] = value;
     }
   }

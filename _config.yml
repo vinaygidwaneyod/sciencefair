@@ -1,6 +1,5 @@
 exclude:
     - docs
-    - judge-signup.html
     - stats.html
     - readme.md
     - redirect.html
