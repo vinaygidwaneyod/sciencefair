@@ -42,24 +42,24 @@ function on_submit_judge(e) {
 }
 
 async function post(data) {
-  // console.log("post", data);
+   console.log("post", data);
   const response = await fetch(GOOGLE_URL, {
     method: "POST",
     body: JSON.stringify(data),
   });
 
   if (response.ok) {
-    // console.log(await response.text());
+     console.log(await response.text());
     signup_frame2({
       result: 'success'
     })
   } else {
-    // console.log('error', response);
+     console.log('error', response);
   }
 }
 
 function callback_judge(result) {
-  // console.log("callback result", result);
+   console.log("callback result", result);
   signup_frame2(result);
   return false;
 }
