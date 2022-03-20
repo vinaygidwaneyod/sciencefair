@@ -15,7 +15,7 @@ Usage:
 
 */
 
-var RESPONSES_DOC_ID = '1TrvO7Hn8vSdtiamyUvBzqoqnTXRfjDWkHRhWUQGTLA0';
+var RESPONSES_DOC_ID = '1Ky8wW1rS9syZy0tNBHj-i02DOAORug7rzEwCjWU7WWQ';
 var SHEET_NAME = 'Incoming';
 
 function doGet(e){
