@@ -7,7 +7,7 @@ function init_judge() {
 }
 
 var GOOGLE_URL =
-   "https://script.google.com/macros/s/AKfycbxNO5osIfTuqnaBlnMw2deyrl5ccW3Fc5pAyqChHIw8oIaK2KwvX-E9Sk0fCwwZDQgB5Q/exec";
+   "https://script.google.com/macros/s/AKfycbxSb35clEbHW5cGJBbq2_dNvXk5VdTghghBl-DmCsL8wZkFiC162p2XRfmip6VeNp5AWA/exec";
 
 function on_submit_judge(e) {
   // console.log('submit');
