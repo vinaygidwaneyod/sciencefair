@@ -7,7 +7,8 @@ function init_judge() {
 }
 
 var GOOGLE_URL =
-  "https://script.google.com/macros/s/AKfycbz6_Xi6rNg68xbHFcBR5TtFYtAtCRI_MsQ0Unq3Xg/exec";
+    "https://script.google.com/macros/s/AKfycbzYGZucpdg199LBrVjKrHS-T6XgpJHivDZNN1g2aIPPmM1sewRb/exec";
+
 function on_submit_judge(e) {
   // console.log('submit');
   e.preventDefault();
