@@ -3,7 +3,7 @@ $(document).ready(initialize);
 // Edit this URL to point to the script
 
 var GOOGLE_URL =
-  "https://script.google.com/macros/s/AKfycbyut4u4p2UIBXxL-DOChKGKju_FeGiZcu9fI0WSUfqnvstdoiLaIB609pa-sa2A6e10Qw/exec";
+  "https://script.google.com/d/11KRhsRj7g56e3o6zd4mSGKe2aIKWDke84kVgvSBP76S_UMojew0RbArI/edit?mid=ACjPJvE3axvZgVudoshSjAjHwFTcp5YIPBYdyCJrMqQmXt90xttYR3d5TmtGfPtVvlCgxxsAahXfx4ViOwAdKugF9u-p2PVIgUrYrudGg8kEfEWjP7NIduxaPPGkvs7SpPRtAw3fvoTdNOo&uiv=2";
 
 function initialize() {
   TableFactory.install();
