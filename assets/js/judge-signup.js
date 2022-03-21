@@ -7,7 +7,7 @@ function init_judge() {
 }
 
 var GOOGLE_URL =
-  "https://script.google.com/d/1JP9W6VT8dIkK7P-G6zSmT8vZJYyoe9JnwiDlpJ6xuT8gSHvhT0IPObWd/edit?mid=ACjPJvEdo9TY6W60cFUGktWFreRG3m9Js_50AS9_CsLzWLO1ZyPydZ90sQr3ap4bM1qw6UjEgjR8Pk8gx4STCWlJEJXm4NmCyc_qRNOC3vIYsvQCV2wT6bw9PqEhrmFXkGmbdCQkcVSQlLw&uiv=2";
+  "https://script.google.com/macros/s/AKfycbz6_Xi6rNg68xbHFcBR5TtFYtAtCRI_MsQ0Unq3Xg/exec";
 function on_submit_judge(e) {
   // console.log('submit');
   e.preventDefault();
